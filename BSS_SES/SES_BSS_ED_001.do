@@ -485,4 +485,130 @@ restore
 ********************************************************************************
 ********************************************************************************
 
+*Load in excel data (Education)
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Education") allstring
+
+//////	Education	//////////
+
+*Male Data
+preserve
+
+drop in 1/11
+keep if A=="Male" 
+destring, replace
+egen ED = seq()
+order ED
+
+*Renaming and labelling variabels
+rename A sex
+rename B education_total
+rename C education_preprimary
+rename D education_primary
+rename E education_composite
+rename F education_secondary
+rename G education_post_secondary
+rename H education_tertiary
+rename I education_other
+rename J education_none
+rename K education_not_stated
+
+label var ED "Enumeration District Number"
+label var sex "Sex"
+label var education_total "Education Total"
+label var education_preprimary "Preprimary"
+label var education_primary "Primary"
+label var education_composite "Senior/Composite"
+label var education_secondary "Secondary"
+label var education_post_secondary "Post Secondary"
+label var education_tertiary "Tertiary"
+label var education_other "Education- Other"
+label var education_none "Education None"
+label var education_not_stated "Education not stated"
+
+save "male_education_SES", replace
+
+restore
+
+********************************************************************************
+
+*Female Data
+preserve
+
+drop in 1/11
+keep if A=="Female" 
+destring, replace
+egen ED = seq()
+order ED
+
+*Renaming and labelling variabels
+rename A sex
+rename B education_total
+rename C education_preprimary
+rename D education_primary
+rename E education_composite
+rename F education_secondary
+rename G education_post_secondary
+rename H education_tertiary
+rename I education_other
+rename J education_none
+rename K education_not_stated
+
+label var ED "Enumeration District Number"
+label var sex "Sex"
+label var education_total "Education Total"
+label var education_preprimary "Preprimary"
+label var education_primary "Primary"
+label var education_composite "Senior/Composite"
+label var education_secondary "Secondary"
+label var education_post_secondary "Post Secondary"
+label var education_tertiary "Tertiary"
+label var education_other "Education- Other"
+label var education_none "Education None"
+label var education_not_stated "Education not stated"
+
+save "female_education_SES", replace
+
+restore
+********************************************************************************
+
+*Total Data
+preserve
+
+drop in 1/11
+keep if A=="Total" 
+destring, replace
+egen ED = seq()
+order ED
+
+*Renaming and labelling variabels
+rename A sex
+rename B education_total
+rename C education_preprimary
+rename D education_primary
+rename E education_composite
+rename F education_secondary
+rename G education_post_secondary
+rename H education_tertiary
+rename I education_other
+rename J education_none
+rename K education_not_stated
+
+label var ED "Enumeration District Number"
+label var sex "Sex"
+label var education_total "Education Total"
+label var education_preprimary "Preprimary"
+label var education_primary "Primary"
+label var education_composite "Senior/Composite"
+label var education_secondary "Secondary"
+label var education_post_secondary "Post Secondary"
+label var education_tertiary "Tertiary"
+label var education_other "Education- Other"
+label var education_none "Education None"
+label var education_not_stated "Education not stated"
+
+save "total_education_SES", replace
+
+restore
+********************************************************************************
+********************************************************************************
 
