@@ -440,3 +440,49 @@ save "single_mother_liveborn_SES", replace
 restore
 ********************************************************************************
 ********************************************************************************
+
+*Load in excel data (Households and Relationship to Head of household)
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Relationship to head") allstring clear
+
+/////	Households and Relationship to Head of household	//////
+
+preserve
+
+drop in 1/4
+destring, replace
+
+*Renaming and labelling variabels
+rename A ED
+rename B rth_total
+rename C rth_head
+rename D rth_spouse
+rename E rth_child_head
+rename F rth_child_inlaw
+rename G rth_grandchild
+rename H rth_parent
+rename I rth_other_relative
+rename J rth_vistor
+rename K rth_non_relative
+rename L rth_not_stated
+
+
+label var ED "Enumeration District Number"
+label var rth_total "RTH Total"
+label var rth_head "Head"
+label var rth_spouse "Spouse/Partner"
+label var rth_child_head "Child of Head/Spouse"
+label var rth_child_inlaw "Son/Daughter in law"
+label var rth_grandchild "Grandchild"
+label var rth_parent "Parent/Parent in law"
+label var rth_other_relative "Other Relative"
+label var rth_vistor "Visitor"
+label var rth_non_relative "Other non-relative"
+label var rth_not_stated "Relationship to head- Not stated"
+
+save "relationship_to_head_SES", replace
+
+restore
+********************************************************************************
+********************************************************************************
+
+
