@@ -997,3 +997,144 @@ restore
 ********************************************************************************
 ********************************************************************************
 
+*Load in excel data (Household Size)
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Household Size") allstring clear
+
+/////	Household Size	//////
+
+preserve
+
+drop in 1/4
+destring, replace
+
+*Renaming and labelling variabels
+rename A ED
+rename B hsize_total
+rename C hsize_mean
+rename D hsize_1Person
+rename E hsize_2Person
+rename F hsize_3Person
+rename G hsize_4Person
+rename H hsize_5Person
+rename I hsize_6Person
+rename J hsize_7Person
+rename K hsize_8Person
+rename L hsize_9Person
+rename M hsize_10Person
+rename N hsize_11Person
+rename O hsize_12Person
+rename P hsize_13Person
+
+label var ED "Enumeration District Number"
+label var hsize_total "Household size Total"
+label var hsize_mean "Household size Mean"
+label var hsize_1Person "Household size 1 person"
+label var hsize_2Person "Household size 2 persons"
+label var hsize_3Person "Household size 3 persons"
+label var hsize_4Person "Household size 4 persons"
+label var hsize_5Person "Household size 5 persons"
+label var hsize_6Person "Household size 6 persons"
+label var hsize_7Person "Household size 7 persons"
+label var hsize_8Person "Household size 8 persons"
+label var hsize_9Person "Household size 9 persons"
+label var hsize_10Person "Household size 10 persons"
+label var hsize_11Person "Household size 11 persons"
+label var hsize_12Person "Household size 12 persons"
+label var hsize_13Person "Household size 13 persons or more"
+
+save "household_size_SES", replace
+
+restore
+********************************************************************************
+********************************************************************************
+
+*Load in excel data (Liveborn children)
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Liveborn children") allstring clear
+
+/////	Women 15-64 years and Total Liveborn Children	//////
+
+preserve
+
+drop in 1/4
+destring, replace
+
+*Renaming and labelling variabels
+rename A ED
+rename B live_total
+rename C live_0
+rename D live_1
+rename E live_2
+rename F live_3
+rename G live_4
+rename H live_5
+rename I live_6
+rename J live_7
+rename K live_8
+rename L live_9
+rename M live_10
+rename N live_not_stated
+
+label var ED "Enumeration District Number"
+label var live_total "Liveborn Children Total"
+label var live_0 "0 Liveborn Children"
+label var live_1 "1 Liveborn Children"
+label var live_2 "2 Liveborn Children"
+label var live_3 "3 Liveborn Children"
+label var live_4 "4 Liveborn Children"
+label var live_5 "5 Liveborn Children"
+label var live_6 "6 Liveborn Children"
+label var live_7 "7 Liveborn Children"
+label var live_8 "8 Liveborn Children"
+label var live_9 "9 Liveborn Children"
+label var live_10 "10 Liveborn Children"
+label var live_not_stated "Liveborn Children Not"
+
+
+save "liveborn_SES", replace
+
+restore
+********************************************************************************
+********************************************************************************
+
+*Load in excel data (Crime)
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Crime") allstring clear
+
+/////	Crime	//////
+
+preserve
+
+drop in 1/4
+destring, replace
+
+*Renaming and labelling variabels
+rename A ED
+rename B crime_victim
+rename C crime_victim_not_stated
+rename D crime_murder
+rename E crime_kidnapping
+rename F crime_shooting
+rename G crime_rape
+rename H crime_other
+rename I crime_robbery
+rename J crime_wound
+rename K crime_larceny
+rename L crime_not_stated
+
+label var ED "Enumeration District Number"
+label var crime_victim "Crime victim"
+label var crime_victim_not_stated "Crime victim Not Stated"
+label var crime_murder "Murder Crime"
+label var crime_kidnapping "Kidnapping Crime"
+label var crime_shooting "Shooting Crime"
+label var crime_rape "Rape/Abuse Crime"
+label var crime_other "Other Crime"
+label var crime_robbery "Robbery Crime"
+label var crime_wound "Wound Crime"
+label var crime_larceny "Larceny Crime"
+label var crime_not_stated "Crime Not Stated"
+
+save "crime_SES", replace
+
+restore
+********************************************************************************
+********************************************************************************
