@@ -862,3 +862,138 @@ save "total_mactivity_SES", replace
 restore
 ********************************************************************************
 ********************************************************************************
+
+*Load in excel data (Work Activity)
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Work Activity") allstring
+
+//////	Work Activity	//////////
+
+*Male Data
+preserve
+
+drop in 1/11
+keep if A=="Male" 
+destring, replace
+egen ED = seq()
+order ED
+
+*Renaming and labelling variabels
+rename A sex
+rename B wactivity_total
+rename C wactivity_government
+rename D wactivity_private_enterprise
+rename E wactivity_private_house
+rename F wactivity_other
+rename G wactivity_unpaid_work
+rename H wactivity_paid_help
+rename I wactivity_unpaid_help
+rename J wactivity_no_work
+rename K wactivity_other_2
+rename L wactivity_not_stated
+
+label var ED "Enumeration District Number"
+label var sex "Sex"
+label var wactivity_total "Work Activity Total"
+label var wactivity_government "Government Work Activity"
+label var wactivity_private_enterprise "Private Enterprise Work Activity"
+label var wactivity_private_house "Private household Work Activity"
+label var wactivity_other "Other Work Activity"
+label var wactivity_unpaid_work "Unpaid Worker Work Activity"
+label var wactivity_paid_help "Paid Help Work Activity"
+label var wactivity_unpaid_help "Unpaid Help Work Activity"
+label var wactivity_no_work "Did not Work Work Activity"
+label var wactivity_other_2 "Other 2 Work Activity"
+label var wactivity_not_stated "Not stated Work Activity"
+
+save "male_wactivity_SES", replace
+
+restore
+
+********************************************************************************
+
+*Female Data
+preserve
+
+drop in 1/11
+keep if A=="Female" 
+destring, replace
+egen ED = seq()
+order ED
+
+*Renaming and labelling variabels
+rename A sex
+rename B wactivity_total
+rename C wactivity_government
+rename D wactivity_private_enterprise
+rename E wactivity_private_house
+rename F wactivity_other
+rename G wactivity_unpaid_work
+rename H wactivity_paid_help
+rename I wactivity_unpaid_help
+rename J wactivity_no_work
+rename K wactivity_other_2
+rename L wactivity_not_stated
+
+label var ED "Enumeration District Number"
+label var sex "Sex"
+label var wactivity_total "Work Activity Total"
+label var wactivity_government "Government Work Activity"
+label var wactivity_private_enterprise "Private Enterprise Work Activity"
+label var wactivity_private_house "Private household Work Activity"
+label var wactivity_other "Other Work Activity"
+label var wactivity_unpaid_work "Unpaid Worker Work Activity"
+label var wactivity_paid_help "Paid Help Work Activity"
+label var wactivity_unpaid_help "Unpaid Help Work Activity"
+label var wactivity_no_work "Did not Work Work Activity"
+label var wactivity_other_2 "Other 2 Work Activity"
+label var wactivity_not_stated "Not stated Work Activity"
+
+save "female_wactivity_SES", replace
+
+restore
+
+********************************************************************************
+
+*Total Data
+preserve
+
+drop in 1/11
+keep if A=="Total" 
+destring, replace
+egen ED = seq()
+order ED
+
+*Renaming and labelling variabels
+rename A sex
+rename B wactivity_total
+rename C wactivity_government
+rename D wactivity_private_enterprise
+rename E wactivity_private_house
+rename F wactivity_other
+rename G wactivity_unpaid_work
+rename H wactivity_paid_help
+rename I wactivity_unpaid_help
+rename J wactivity_no_work
+rename K wactivity_other_2
+rename L wactivity_not_stated
+
+label var ED "Enumeration District Number"
+label var sex "Sex"
+label var wactivity_total "Work Activity Total"
+label var wactivity_government "Government Work Activity"
+label var wactivity_private_enterprise "Private Enterprise Work Activity"
+label var wactivity_private_house "Private household Work Activity"
+label var wactivity_other "Other Work Activity"
+label var wactivity_unpaid_work "Unpaid Worker Work Activity"
+label var wactivity_paid_help "Paid Help Work Activity"
+label var wactivity_unpaid_help "Unpaid Help Work Activity"
+label var wactivity_no_work "Did not Work Work Activity"
+label var wactivity_other_2 "Other 2 Work Activity"
+label var wactivity_not_stated "Not stated Work Activity"
+
+save "total_wactivity_SES", replace
+
+restore
+********************************************************************************
+********************************************************************************
+
