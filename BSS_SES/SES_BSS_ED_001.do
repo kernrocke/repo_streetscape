@@ -1138,3 +1138,322 @@ save "crime_SES", replace
 restore
 ********************************************************************************
 ********************************************************************************
+
+*Load in excel data (Occupation)
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Occupation") allstring
+
+//////	Occupation	//////////
+
+*Male Data
+preserve
+
+drop in 1/9
+keep if A=="Male" 
+destring, replace
+egen ED = seq()
+order ED
+
+*Renaming and labelling variabels
+rename A sex
+rename B occupation_total
+rename C occupation_a_forces
+rename D occupation_exec
+rename E occupation_admin_mange
+rename F occupation_prod_mange
+rename G occupation_hosp_mange
+rename H occupation_sci_prof
+rename I occupation_health_prof
+rename J occupation_teach_prof
+rename K occupation_busi_prof
+rename L occupation_info_prof
+rename M occupation_legal_prof
+rename N occupation_sci_a_prof
+rename O occupation_health_a_prof
+rename P occupation_busi_a_prof
+rename Q occupation_legal_a_prof
+rename R occupation_info_tech
+rename S occupation_gen_clerk
+rename T occupation_cust_clerk
+rename U occupation_num_clerk
+rename V occupation_other_clerk
+rename W occupation_per_work
+rename X occupation_sale_work
+rename Y occupation_care_work
+rename Z occupation_prot_work
+rename AA occupation_mar_agri
+rename AB occupation_mar_fores
+rename AC occupation_s_farm
+rename AD occupation_build_work
+rename AE occupation_metal_work
+rename AF occupation_handicraft
+rename AG occupation_elec_work
+rename AH occupation_food_process
+rename AI occupation_plant_assemble
+rename AJ occupation_drive_oper
+rename AK occupation_clean
+rename AL occupation_agri_labour
+rename AM occupation_mining_labour
+rename AN occupation_food_prep
+rename AO occupation_street_ser
+rename AP occupation_refuse_work
+rename AQ occupation_not_stated
+
+label var ED "Enumeration District Number"
+label var sex "Sex"
+label var occupation_total "Occupation Total"
+label var occupation_a_forces "Armed Forces Occupation"
+label var occupation_exec "Chief executives, senior officials and legislators Occupation"
+label var occupation_admin_mange "Administrative and Commerical Managers Occupation"
+label var occupation_prod_mange "Production and Specialised Services Managers Occupation"
+label var occupation_hosp_mange "Hospitality Retail and Other Services Managers Occupation"
+label var occupation_sci_prof "Science and Engineering Professionals Occupation"
+label var occupation_health_prof "Health Professionals Occupation"
+label var occupation_teach_prof "Teaching Professionals Occupation"
+label var occupation_busi_prof "Business and Administration Professionals Occupation"
+label var occupation_info_prof "Information and Communications Technology Professionals Occupation"
+label var occupation_legal_prof "Legal, Social and Cultural Professionals Occupation"
+label var occupation_sci_a_prof "Science and Engineering Associate Professionals Occupation"
+label var occupation_health_a_prof "Health Associate Professionals Occupation"
+label var occupation_busi_a_prof "Business and Administration Associate Professionals Occupation"
+label var occupation_legal_a_prof "Legal, Social, Cultural and Related Associate Professionals Occupation"
+label var occupation_info_tech "Information and Communications Technicians Occupation"
+label var occupation_gen_clerk "General and Keyboard Clerks Occupation"
+label var occupation_cust_clerk "Customer Services Clerks Occupation"
+label var occupation_num_clerk "Numerical and Material Recording Clerks Occupation"
+label var occupation_other_clerk "Other Clerical Support Workers Occupation"
+label var occupation_per_work "Personal Service Workers Occupation"
+label var occupation_sale_work "Sales Workers Occupation"
+label var occupation_care_work "Personal Care Workers Occupation"
+label var occupation_prot_work "Protective Services Workers Occupation"
+label var occupation_mar_agri "Market-oriented Skilled Agricultural Workers Occupation"
+label var occupation_mar_fores "Market-oriented Skilled Forestry, Fishery and Hunting Workers Occupation"
+label var occupation_s_farm "Subsistence Farmers, Fishers, Hunters and Gatherers Occupation"
+label var occupation_build_work "Building and related trades Workers Excluding electricians Occupation"
+label var occupation_metal_work "Metal Machinery and Related Trades Workers Occupation"
+label var occupation_handicraft "Handicraft and Printing Workers Occupation"
+label var occupation_elec_work "Electrical and Electronic Trades Workers Occupation"
+label var occupation_food_process "Food Processing, Wood Working, Garment and Other Craft and Related Trades Workers Occupation"
+label var occupation_plant_assemble "Stationary Plant and Machine Operators and Assemblers Occupation"
+label var occupation_drive_oper "Drivers and Mobile Plant Operators Occupation"
+label var occupation_clean "Cleaners and Helpers Occupation"
+label var occupation_agri_labour "Agricultural Forestry and Fishery Labourers Occupation"
+label var occupation_mining_labour "Labourers in Mining Construction Manufacturing and Transport Occupation"
+label var occupation_food_prep "Food Preparation Assistants"
+label var occupation_street_ser "Street and Related Sales and Service Workers Occupation"
+label var occupation_refuse_work "Refuse Workers and other Elementary Workers Occupation"
+label var occupation_not_stated "Occupation Not Stated"
+
+save "male_occupation_SES", replace
+
+restore
+
+********************************************************************************
+
+*Female Data
+preserve
+
+drop in 1/9
+keep if A=="Female" 
+destring, replace
+egen ED = seq()
+order ED
+
+*Renaming and labelling variabels
+rename A sex
+rename B occupation_total
+rename C occupation_a_forces
+rename D occupation_exec
+rename E occupation_admin_mange
+rename F occupation_prod_mange
+rename G occupation_hosp_mange
+rename H occupation_sci_prof
+rename I occupation_health_prof
+rename J occupation_teach_prof
+rename K occupation_busi_prof
+rename L occupation_info_prof
+rename M occupation_legal_prof
+rename N occupation_sci_a_prof
+rename O occupation_health_a_prof
+rename P occupation_busi_a_prof
+rename Q occupation_legal_a_prof
+rename R occupation_info_tech
+rename S occupation_gen_clerk
+rename T occupation_cust_clerk
+rename U occupation_num_clerk
+rename V occupation_other_clerk
+rename W occupation_per_work
+rename X occupation_sale_work
+rename Y occupation_care_work
+rename Z occupation_prot_work
+rename AA occupation_mar_agri
+rename AB occupation_mar_fores
+rename AC occupation_s_farm
+rename AD occupation_build_work
+rename AE occupation_metal_work
+rename AF occupation_handicraft
+rename AG occupation_elec_work
+rename AH occupation_food_process
+rename AI occupation_plant_assemble
+rename AJ occupation_drive_oper
+rename AK occupation_clean
+rename AL occupation_agri_labour
+rename AM occupation_mining_labour
+rename AN occupation_food_prep
+rename AO occupation_street_ser
+rename AP occupation_refuse_work
+rename AQ occupation_not_stated
+
+label var ED "Enumeration District Number"
+label var sex "Sex"
+label var occupation_total "Occupation Total"
+label var occupation_a_forces "Armed Forces Occupation"
+label var occupation_exec "Chief executives, senior officials and legislators Occupation"
+label var occupation_admin_mange "Administrative and Commerical Managers Occupation"
+label var occupation_prod_mange "Production and Specialised Services Managers Occupation"
+label var occupation_hosp_mange "Hospitality Retail and Other Services Managers Occupation"
+label var occupation_sci_prof "Science and Engineering Professionals Occupation"
+label var occupation_health_prof "Health Professionals Occupation"
+label var occupation_teach_prof "Teaching Professionals Occupation"
+label var occupation_busi_prof "Business and Administration Professionals Occupation"
+label var occupation_info_prof "Information and Communications Technology Professionals Occupation"
+label var occupation_legal_prof "Legal, Social and Cultural Professionals Occupation"
+label var occupation_sci_a_prof "Science and Engineering Associate Professionals Occupation"
+label var occupation_health_a_prof "Health Associate Professionals Occupation"
+label var occupation_busi_a_prof "Business and Administration Associate Professionals Occupation"
+label var occupation_legal_a_prof "Legal, Social, Cultural and Related Associate Professionals Occupation"
+label var occupation_info_tech "Information and Communications Technicians Occupation"
+label var occupation_gen_clerk "General and Keyboard Clerks Occupation"
+label var occupation_cust_clerk "Customer Services Clerks Occupation"
+label var occupation_num_clerk "Numerical and Material Recording Clerks Occupation"
+label var occupation_other_clerk "Other Clerical Support Workers Occupation"
+label var occupation_per_work "Personal Service Workers Occupation"
+label var occupation_sale_work "Sales Workers Occupation"
+label var occupation_care_work "Personal Care Workers Occupation"
+label var occupation_prot_work "Protective Services Workers Occupation"
+label var occupation_mar_agri "Market-oriented Skilled Agricultural Workers Occupation"
+label var occupation_mar_fores "Market-oriented Skilled Forestry, Fishery and Hunting Workers Occupation"
+label var occupation_s_farm "Subsistence Farmers, Fishers, Hunters and Gatherers Occupation"
+label var occupation_build_work "Building and related trades Workers Excluding electricians Occupation"
+label var occupation_metal_work "Metal Machinery and Related Trades Workers Occupation"
+label var occupation_handicraft "Handicraft and Printing Workers Occupation"
+label var occupation_elec_work "Electrical and Electronic Trades Workers Occupation"
+label var occupation_food_process "Food Processing, Wood Working, Garment and Other Craft and Related Trades Workers Occupation"
+label var occupation_plant_assemble "Stationary Plant and Machine Operators and Assemblers Occupation"
+label var occupation_drive_oper "Drivers and Mobile Plant Operators Occupation"
+label var occupation_clean "Cleaners and Helpers Occupation"
+label var occupation_agri_labour "Agricultural Forestry and Fishery Labourers Occupation"
+label var occupation_mining_labour "Labourers in Mining Construction Manufacturing and Transport Occupation"
+label var occupation_food_prep "Food Preparation Assistants"
+label var occupation_street_ser "Street and Related Sales and Service Workers Occupation"
+label var occupation_refuse_work "Refuse Workers and other Elementary Workers Occupation"
+label var occupation_not_stated "Occupation Not Stated"
+
+save "female_occupation_SES", replace
+
+restore
+********************************************************************************
+
+*Total Data
+preserve
+
+drop in 1/9
+keep if A=="Total" 
+destring, replace
+egen ED = seq()
+order ED
+
+*Renaming and labelling variabels
+rename A sex
+rename B occupation_total
+rename C occupation_a_forces
+rename D occupation_exec
+rename E occupation_admin_mange
+rename F occupation_prod_mange
+rename G occupation_hosp_mange
+rename H occupation_sci_prof
+rename I occupation_health_prof
+rename J occupation_teach_prof
+rename K occupation_busi_prof
+rename L occupation_info_prof
+rename M occupation_legal_prof
+rename N occupation_sci_a_prof
+rename O occupation_health_a_prof
+rename P occupation_busi_a_prof
+rename Q occupation_legal_a_prof
+rename R occupation_info_tech
+rename S occupation_gen_clerk
+rename T occupation_cust_clerk
+rename U occupation_num_clerk
+rename V occupation_other_clerk
+rename W occupation_per_work
+rename X occupation_sale_work
+rename Y occupation_care_work
+rename Z occupation_prot_work
+rename AA occupation_mar_agri
+rename AB occupation_mar_fores
+rename AC occupation_s_farm
+rename AD occupation_build_work
+rename AE occupation_metal_work
+rename AF occupation_handicraft
+rename AG occupation_elec_work
+rename AH occupation_food_process
+rename AI occupation_plant_assemble
+rename AJ occupation_drive_oper
+rename AK occupation_clean
+rename AL occupation_agri_labour
+rename AM occupation_mining_labour
+rename AN occupation_food_prep
+rename AO occupation_street_ser
+rename AP occupation_refuse_work
+rename AQ occupation_not_stated
+
+label var ED "Enumeration District Number"
+label var sex "Sex"
+label var occupation_total "Occupation Total"
+label var occupation_a_forces "Armed Forces Occupation"
+label var occupation_exec "Chief executives, senior officials and legislators Occupation"
+label var occupation_admin_mange "Administrative and Commerical Managers Occupation"
+label var occupation_prod_mange "Production and Specialised Services Managers Occupation"
+label var occupation_hosp_mange "Hospitality Retail and Other Services Managers Occupation"
+label var occupation_sci_prof "Science and Engineering Professionals Occupation"
+label var occupation_health_prof "Health Professionals Occupation"
+label var occupation_teach_prof "Teaching Professionals Occupation"
+label var occupation_busi_prof "Business and Administration Professionals Occupation"
+label var occupation_info_prof "Information and Communications Technology Professionals Occupation"
+label var occupation_legal_prof "Legal, Social and Cultural Professionals Occupation"
+label var occupation_sci_a_prof "Science and Engineering Associate Professionals Occupation"
+label var occupation_health_a_prof "Health Associate Professionals Occupation"
+label var occupation_busi_a_prof "Business and Administration Associate Professionals Occupation"
+label var occupation_legal_a_prof "Legal, Social, Cultural and Related Associate Professionals Occupation"
+label var occupation_info_tech "Information and Communications Technicians Occupation"
+label var occupation_gen_clerk "General and Keyboard Clerks Occupation"
+label var occupation_cust_clerk "Customer Services Clerks Occupation"
+label var occupation_num_clerk "Numerical and Material Recording Clerks Occupation"
+label var occupation_other_clerk "Other Clerical Support Workers Occupation"
+label var occupation_per_work "Personal Service Workers Occupation"
+label var occupation_sale_work "Sales Workers Occupation"
+label var occupation_care_work "Personal Care Workers Occupation"
+label var occupation_prot_work "Protective Services Workers Occupation"
+label var occupation_mar_agri "Market-oriented Skilled Agricultural Workers Occupation"
+label var occupation_mar_fores "Market-oriented Skilled Forestry, Fishery and Hunting Workers Occupation"
+label var occupation_s_farm "Subsistence Farmers, Fishers, Hunters and Gatherers Occupation"
+label var occupation_build_work "Building and related trades Workers Excluding electricians Occupation"
+label var occupation_metal_work "Metal Machinery and Related Trades Workers Occupation"
+label var occupation_handicraft "Handicraft and Printing Workers Occupation"
+label var occupation_elec_work "Electrical and Electronic Trades Workers Occupation"
+label var occupation_food_process "Food Processing, Wood Working, Garment and Other Craft and Related Trades Workers Occupation"
+label var occupation_plant_assemble "Stationary Plant and Machine Operators and Assemblers Occupation"
+label var occupation_drive_oper "Drivers and Mobile Plant Operators Occupation"
+label var occupation_clean "Cleaners and Helpers Occupation"
+label var occupation_agri_labour "Agricultural Forestry and Fishery Labourers Occupation"
+label var occupation_mining_labour "Labourers in Mining Construction Manufacturing and Transport Occupation"
+label var occupation_food_prep "Food Preparation Assistants"
+label var occupation_street_ser "Street and Related Sales and Service Workers Occupation"
+label var occupation_refuse_work "Refuse Workers and other Elementary Workers Occupation"
+label var occupation_not_stated "Occupation Not Stated"
+
+save "total_occupation_SES", replace
+
+restore
+********************************************************************************
+********************************************************************************
