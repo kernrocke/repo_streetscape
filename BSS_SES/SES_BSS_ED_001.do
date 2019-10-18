@@ -612,3 +612,253 @@ restore
 ********************************************************************************
 ********************************************************************************
 
+*Load in excel data (Yearly Pay)
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Yearly Pay") allstring
+
+//////	Yearly Pay	//////////
+
+*Male Data
+preserve
+
+drop in 1/11
+keep if A=="Male" 
+destring, replace
+egen ED = seq()
+order ED
+
+*Renaming and labelling variabels
+rename A sex
+rename B income_total
+rename C income_median
+rename D income_0_49
+rename E income_50_99
+rename F income_100_149
+rename G income_150_199
+rename H income_200_over
+rename I income_other
+rename J income_not_stated
+
+label var ED "Enumeration District Number"
+label var sex "Sex"
+label var income_total "Income Total"
+label var income_median "Median Income"
+label var income_0_49 "$0 - 49999"
+label var income_50_99 "$50000 - 99999"
+label var income_100_149 "$100000 - 149999"
+label var income_150_199 "$150000 - 199999"
+label var income_200_over "$200000 and over"
+label var income_other "Income other"
+label var income_not_stated "Income not stated"
+
+save "male_income_SES", replace
+
+restore
+
+********************************************************************************
+
+*Female Data
+preserve
+
+drop in 1/11
+keep if A=="Female" 
+destring, replace
+egen ED = seq()
+order ED
+
+*Renaming and labelling variabels
+rename A sex
+rename B income_total
+rename C income_median
+rename D income_0_49
+rename E income_50_99
+rename F income_100_149
+rename G income_150_199
+rename H income_200_over
+rename I income_other
+rename J income_not_stated
+
+label var ED "Enumeration District Number"
+label var sex "Sex"
+label var income_total "Income Total"
+label var income_median "Median Income"
+label var income_0_49 "$0 - 49999"
+label var income_50_99 "$50000 - 99999"
+label var income_100_149 "$100000 - 149999"
+label var income_150_199 "$150000 - 199999"
+label var income_200_over "$200000 and over"
+label var income_other "Income other"
+label var income_not_stated "Income not stated"
+
+save "female_income_SES", replace
+
+restore
+
+********************************************************************************
+
+*Total Data
+preserve
+
+drop in 1/11
+keep if A=="Total" 
+destring, replace
+egen ED = seq()
+order ED
+
+*Renaming and labelling variabels
+rename A sex
+rename B income_total
+rename C income_median
+rename D income_0_49
+rename E income_50_99
+rename F income_100_149
+rename G income_150_199
+rename H income_200_over
+rename I income_other
+rename J income_not_stated
+
+
+label var ED "Enumeration District Number"
+label var sex "Sex"
+label var income_total "Income Total"
+label var income_median "Median Income"
+label var income_0_49 "$0 - 49999"
+label var income_50_99 "$50000 - 99999"
+label var income_100_149 "$100000 - 149999"
+label var income_150_199 "$150000 - 199999"
+label var income_200_over "$200000 and over"
+label var income_other "Income other"
+label var income_not_stated "Income not stated"
+
+save "total_income_SES", replace
+
+restore
+********************************************************************************
+********************************************************************************
+
+*Load in excel data (Main Activity)
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Main Activity") allstring
+
+//////	Main Activity	//////////
+
+*Male Data
+preserve
+
+drop in 1/11
+keep if A=="Male" 
+destring, replace
+egen ED = seq()
+order ED
+
+*Renaming and labelling variabels
+rename A sex
+rename B mactivity_total
+rename C mactivity_worked
+rename D mactivity_j_notworking
+rename E mactivity_look_work
+rename F mactivity_home
+rename G mactivity_student
+rename H mactivity_retired
+rename I mactivity_incapacitated
+rename J mactivity_other
+rename K mactivity_not_stated
+
+label var ED "Enumeration District Number"
+label var sex "Sex"
+label var mactivity_total "Main Activity Total"
+label var mactivity_worked "Main Activity Worked"
+label var mactivity_j_notworking "Main Activity With Job Not Working"
+label var mactivity_look_work "Main Activity Looked for Work"
+label var mactivity_home "Main Activity Home Duties"
+label var mactivity_student "Main Activity Student"
+label var mactivity_retired "Main Activity Retired"
+label var mactivity_incapacitated "Main Activity Incapacitated"
+label var mactivity_other "Main Activity Other"
+label var mactivity_not_stated "Main Activity Not Stated"
+
+save "male_mactivity_SES", replace
+
+restore
+
+********************************************************************************
+
+*Female Data
+preserve
+
+drop in 1/11
+keep if A=="Female" 
+destring, replace
+egen ED = seq()
+order ED
+
+*Renaming and labelling variabels
+rename A sex
+rename B mactivity_total
+rename C mactivity_worked
+rename D mactivity_j_notworking
+rename E mactivity_look_work
+rename F mactivity_home
+rename G mactivity_student
+rename H mactivity_retired
+rename I mactivity_incapacitated
+rename J mactivity_other
+rename K mactivity_not_stated
+
+label var ED "Enumeration District Number"
+label var sex "Sex"
+label var mactivity_total "Main Activity Total"
+label var mactivity_worked "Main Activity Worked"
+label var mactivity_j_notworking "Main Activity With Job Not Working"
+label var mactivity_look_work "Main Activity Looked for Work"
+label var mactivity_home "Main Activity Home Duties"
+label var mactivity_student "Main Activity Student"
+label var mactivity_retired "Main Activity Retired"
+label var mactivity_incapacitated "Main Activity Incapacitated"
+label var mactivity_other "Main Activity Other"
+label var mactivity_not_stated "Main Activity Not Stated"
+
+save "female_mactivity_SES", replace
+
+restore
+
+********************************************************************************
+
+*Total Data
+preserve
+
+drop in 1/11
+keep if A=="Total" 
+destring, replace
+egen ED = seq()
+order ED
+
+*Renaming and labelling variabels
+rename A sex
+rename B mactivity_total
+rename C mactivity_worked
+rename D mactivity_j_notworking
+rename E mactivity_look_work
+rename F mactivity_home
+rename G mactivity_student
+rename H mactivity_retired
+rename I mactivity_incapacitated
+rename J mactivity_other
+rename K mactivity_not_stated
+
+label var ED "Enumeration District Number"
+label var sex "Sex"
+label var mactivity_total "Main Activity Total"
+label var mactivity_worked "Main Activity Worked"
+label var mactivity_j_notworking "Main Activity With Job Not Working"
+label var mactivity_look_work "Main Activity Looked for Work"
+label var mactivity_home "Main Activity Home Duties"
+label var mactivity_student "Main Activity Student"
+label var mactivity_retired "Main Activity Retired"
+label var mactivity_incapacitated "Main Activity Incapacitated"
+label var mactivity_other "Main Activity Other"
+label var mactivity_not_stated "Main Activity Not Stated"
+
+save "total_mactivity_SES", replace
+
+restore
+********************************************************************************
+********************************************************************************
