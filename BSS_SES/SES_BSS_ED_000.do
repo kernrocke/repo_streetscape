@@ -21,3 +21,10 @@ set linesize 200
 
 **---------------------------------------------------
 
+/*
+ANALYSIS OUTLINE
+
+Development of SES and social depreviaion index scores for Barbados by Enummeration District
+
+Dataset: SES estimates from 2010 Census by ED of Barbados 
+
