@@ -3,12 +3,12 @@ capture log close
 cls
 
 **  GENERAL DO-FILE COMMENTS
-**  Program:		SES_BSS_ED_002.do
-**  Project:      	Macroscale Walkability- PhD
-**  Analyst:		Rocke KD
-**  Task:          	Merging of BSS SES data by EDs 2010 from SES_BSS_ED_001
-**	Date Created:	21/10/2019
-**	Date Modified: 	21/10/2019
+    **  Program:		SES_BSS_ED_002.do
+    **  Project:      	Macroscale Walkability- PhD
+    **  Analyst:		Kern Rocke
+    **	Date Created:	21/10/2019
+    **	Date Modified: 	21/10/2019
+    **  Algorithm Task: Merging of BSS SES data by EDs 2010 from SES_BSS_ED_001
 
 
 ** DO-FILE SET UP COMMANDS

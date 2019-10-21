@@ -5,10 +5,10 @@ cls
 **  GENERAL DO-FILE COMMENTS
 **  Program:		SES_BSS_ED_001.do
 **  Project:      	Macroscale Walkability- PhD
-**  Analyst:		Rocke KD
-**  Task:          	Data Preparation and Cleaning of BSS SES data by EDs 2010
+**  Analyst:		Kern Rocke
 **	Date Created:	17/10/2019
 **	Date Modified: 	21/10/2019
+**  Algorithm Task: Data Preparation and Cleaning of BSS SES data by EDs 2010
 
 
 ** DO-FILE SET UP COMMANDS
@@ -19,7 +19,10 @@ set more 1
 set linesize 200
 
 *Setting working directory
-cd "/Users/kernrocke/Documents/Statistical Data Anlaysis/2019/Barbados Statisticl Service/SES/Data"
+** Dataset to encrypted location
+local datapath "X:/The University of the West Indies/DataGroup - repo_data/data_p145/BSS_SES"
+** Logfiles to unencrypted location
+local logpath X:/OneDrive - The University of the West Indies/repo_datagroup/repo_p145
 
 /*
 Note
