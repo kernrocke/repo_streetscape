@@ -45,6 +45,15 @@ Measures for SES which will be considered are:
 2) Education
 3) Crime
 4) Occupation
-5) Work Skill
+5) Main activity
+6) Age
+7) Ethnicity
+8) Household size
+9) Single mothers and liveborn children
+10) Liveborn children
+11) Work activity
+12) Relationship to head of household
+13) House Tenureship
+
 
 */
