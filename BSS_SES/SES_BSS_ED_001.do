@@ -1150,6 +1150,7 @@ import excel "/Users/kernrocke/The University of the West Indies/DataGroup - Str
 *Male Data
 preserve
 
+drop AR
 drop in 1/9
 keep if A=="Male" 
 destring, replace
@@ -1255,6 +1256,7 @@ restore
 *Female Data
 preserve
 
+drop AR
 drop in 1/9
 keep if A=="Female" 
 destring, replace
@@ -1359,6 +1361,7 @@ restore
 *Total Data
 preserve
 
+drop AR
 drop in 1/9
 keep if A=="Total" 
 destring, replace
