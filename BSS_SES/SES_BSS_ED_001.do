@@ -7,7 +7,7 @@ cls
 **  Project:      	Macroscale Walkability- PhD
 **  Analyst:		Kern Rocke
 **	Date Created:	17/10/2019
-**	Date Modified: 	21/10/2019
+**	Date Modified: 	22/10/2019
 **  Algorithm Task: Data Preparation and Cleaning of BSS SES data by EDs 2010
 
 
