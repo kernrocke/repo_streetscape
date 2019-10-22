@@ -7,7 +7,7 @@ cls
     **  Project:      	Macroscale Walkability- PhD
     **  Analyst:		Kern Rocke
     **	Date Created:	21/10/2019
-    **	Date Modified: 	21/10/2019
+    **	Date Modified: 	22/10/2019
     **  Algorithm Task: Merging of BSS SES data by EDs 2010 from SES_BSS_ED_001
 
 
@@ -25,7 +25,7 @@ cd "/Users/kernrocke/Documents/Statistical Data Anlaysis/2019/Barbados Statistic
 
 Main task: Create one working dataset containing all Barbados SES data by EDs
 Sub tasks: 
-1) Merge sex-specific datasets for each SES category. (Note this shoudl create 13 different datasets)
+1) Merge sex-specific datasets for each SES category. (Note this shoudld create 7 different datasets)
 2) Encode all string variables to categorized numeric (in particular: sex)
 
 */
@@ -95,3 +95,74 @@ order ED sex
 save "income_SES", replace
 
 ********************************************************************************
+
+//////	Main Activity	//////////
+
+*Load in Main Activity data
+use "male_mactivity_SES", clear
+append using "female_mactivity_SES"
+
+*destring sex variable
+encode sex, gen(sex1) label(Sex)
+drop sex
+rename sex1 sex
+order ED sex
+
+save "mactivity_SES", replace
+
+********************************************************************************
+
+//////	Work Activity	//////////
+
+*Load in Work Activity data
+use "male_wactivity_SES", clear
+append using "female_wactivity_SES"
+
+*destring sex variable
+encode sex, gen(sex1) label(Sex)
+drop sex
+rename sex1 sex
+order ED sex
+
+save "wactivity_SES", replace
+
+********************************************************************************
+
+//////	Occupation	//////////
+
+*Load in Occupation data
+use "male_occupation_SES", clear
+append using "female_occupation_SES"
+
+*destring sex variable
+encode sex, gen(sex1) label(Sex)
+drop sex
+rename sex1 sex
+order ED sex
+
+save "occupation_SES", replace
+
+********************************************************************************
+********************************************************************************
+
+/////// Merginig Datasets /////
+
+*This section deals with combining all 14 SES indivudual datasets into one final dataset
+
+use "race_SES", clear
+append using "age_SES"
+append using "household_size_SES"
+append using "house_tenure_SES"
+append using "single_mother_liveborn_SES"
+append using "relationship_to_head_SES"
+append using "education_SES"
+append using "income_SES"
+append using "mactivity_SES"
+append using "wactivity_SES"
+append using "household_size_SES"
+append using "liveborn_SES"
+append using "crime_SES"
+append using "occupation_SES"
+
+*Save final merged dataset representing SES data from BSS Census 2010
+save "SES_BSS_v1", replace
