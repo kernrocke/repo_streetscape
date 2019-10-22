@@ -379,7 +379,7 @@ rename D htenure_private_rent
 rename E htenure_gov_rent
 rename F htenure_rent_free
 rename G htenure_other
-rename H htenure_not_state
+rename H htenure_no_state
 
 label var ED "Enumeration District Number"
 label var htenure_total "House Tenure Total"
