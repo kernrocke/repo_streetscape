@@ -46,7 +46,7 @@ SES data provided by BSS include the following
 */
 
 *Load in excel data (Ethnicity Origin)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Ethnic Origin") allstring
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Ethnic Origin") allstring clear
 
 //////	Ethnicity Origin	//////////
 
@@ -489,7 +489,7 @@ restore
 ********************************************************************************
 
 *Load in excel data (Education)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Education") allstring
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Education") allstring clear
 
 //////	Education	//////////
 
@@ -616,7 +616,7 @@ restore
 ********************************************************************************
 
 *Load in excel data (Yearly Pay)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Yearly Pay") allstring
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Yearly Pay") allstring clear
 
 //////	Yearly Pay	//////////
 
@@ -739,7 +739,7 @@ restore
 ********************************************************************************
 
 *Load in excel data (Main Activity)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Main Activity") allstring
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Main Activity") allstring clear
 
 //////	Main Activity	//////////
 
@@ -867,7 +867,7 @@ restore
 ********************************************************************************
 
 *Load in excel data (Work Activity)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Work Activity") allstring
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Work Activity") allstring clear
 
 //////	Work Activity	//////////
 
@@ -1143,7 +1143,7 @@ restore
 ********************************************************************************
 
 *Load in excel data (Occupation)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Occupation") allstring
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Occupation") allstring clear
 
 //////	Occupation	//////////
 
