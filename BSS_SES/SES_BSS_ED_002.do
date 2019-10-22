@@ -30,3 +30,20 @@ Sub tasks:
 
 */
 
+********************************************************************************
+
+//////	Ethnicity Origin	//////////
+
+*Load in Ethnicity data
+use "male_race_SES", clear
+append using "female_race_SES"
+
+*destring sex variable
+encode sex, gen(sex1) label(Sex)
+drop sex
+rename sex1 sex
+order ED sex
+
+save "race_SES", replace
+
+********************************************************************************
