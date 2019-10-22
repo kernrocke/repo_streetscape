@@ -55,5 +55,7 @@ Measures for SES which will be considered are:
 12) Relationship to head of household
 13) House Tenureship
 
+An idea for future work could be examining the Socioeconmic environment spatially across ECHORN sites.
+(Note: Data can be obtained for USVI and Puerto Rico by ED level from US.gov repositories?)
 
 */
