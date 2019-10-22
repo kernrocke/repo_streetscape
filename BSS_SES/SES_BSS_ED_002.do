@@ -47,3 +47,51 @@ order ED sex
 save "race_SES", replace
 
 ********************************************************************************
+
+//////	Age Origin	//////////
+
+*Load in Age data
+use "male_age_SES", clear
+append using "female_age_SES"
+
+*destring sex variable
+encode sex, gen(sex1) label(Sex)
+drop sex
+rename sex1 sex
+order ED sex
+
+save "age_SES", replace
+
+********************************************************************************
+
+//////	Education	//////////
+
+*Load in Education data
+use "male_education_SES", clear
+append using "female_education_SES"
+
+*destring sex variable
+encode sex, gen(sex1) label(Sex)
+drop sex
+rename sex1 sex
+order ED sex
+
+save "education_SES", replace
+
+********************************************************************************
+
+//////	Yearly Pay	//////////
+
+*Load in Yearly Pay data
+use "male_income_SES", clear
+append using "female_income_SES"
+
+*destring sex variable
+encode sex, gen(sex1) label(Sex)
+drop sex
+rename sex1 sex
+order ED sex
+
+save "income_SES", replace
+
+********************************************************************************
