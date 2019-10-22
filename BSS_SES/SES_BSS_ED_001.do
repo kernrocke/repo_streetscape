@@ -362,7 +362,7 @@ restore
 ********************************************************************************
 
 *Load in excel data (House Tenure)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Household Tenure") allstring clear
+import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("House Tenure") allstring clear
 
 /////	House Tenure	//////
 
