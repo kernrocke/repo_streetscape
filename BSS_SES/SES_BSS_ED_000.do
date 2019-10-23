@@ -58,4 +58,24 @@ Measures for SES which will be considered are:
 An idea for future work could be examining the Socioeconmic environment spatially across ECHORN sites.
 (Note: Data can be obtained for USVI and Puerto Rico by ED level from US.gov repositories?)
 
+
+1) Data cleaning 
+    Algorithim : SES_BSS_ED_001
+    This will be used to import raw data for each SES category into STATA.
+    Removal of any irrelavant data will be done
+
+2) Data management
+    Algorithim : SES_BSS_ED_002
+    This will be used to merge all sex-specific datasets into one location
+    Creation of final dataset to be used for analysis
+
+3) Data Analysis (Part 1)
+    Algorithim : SES_BSS_ED_003
+    This will be used to generarte estimates for each SES catgory by ED to be used for PCA
+    Creation of analysis dataset to be used for part 2
+
+4) Data Analysis (Part 2)
+    Algorithim : SES_BSS_ED_004
+    This will be used to construct SES composite and social depreviation scores by ED using principal compoennt analysis (PCA)
+    Creation of analysis dataset to be used for geospatial mapping of Barbados
 */
