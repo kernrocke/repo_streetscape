@@ -20,7 +20,7 @@ set linesize 200
 
 *Setting working directory
 ** Dataset to encrypted location
-local datapath "X:/The University of the West Indies/DataGroup - repo_data/data_p145/BSS_SES"
+local datapath "/Volumes/Secomba/kernrocke/Boxcryptor/DataGroup - repo_data/data_p145"
 ** Logfiles to unencrypted location
 local logpath X:/OneDrive - The University of the West Indies/repo_datagroup/repo_p145
 
@@ -42,5 +42,5 @@ Non blacks
 
 
 *Load in dataset
-use "BSS_SES", clear
+use "`datapath'/version01/2-working/BSS_SES/BSS_SES", clear
 
