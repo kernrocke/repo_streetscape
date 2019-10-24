@@ -7,7 +7,7 @@ cls
 **  Project:      	Macroscale Walkability- PhD
 **  Analyst:		Kern Rocke
 **	Date Created:	17/10/2019
-**	Date Modified: 	22/10/2019
+**	Date Modified: 	24/10/2019
 **  Algorithm Task: Data Preparation and Cleaning of BSS SES data by EDs 2010
 
 
@@ -53,35 +53,35 @@ import excel "/Users/kernrocke/The University of the West Indies/DataGroup - Str
 *Male Data
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Male" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B race_total
-rename C race_black
-rename D race_white
-rename E race_oriental
-rename F race_east_indian
-rename G race_middle_eastern
-rename H race_mixed
-rename I race_other
-rename J race_not_stated
+rename B m_race_total
+rename C m_race_black
+rename D m_race_white
+rename E m_race_oriental
+rename F m_race_east_indian
+rename G m_race_middle_eastern
+rename H m_race_mixed
+rename I m_race_other
+rename J m_race_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var race_total "Ethnicity Total"
-label var race_black "Black"
-label var race_white "White"
-label var race_oriental "Oriental"
-label var race_east_indian "East Indian"
-label var race_middle_eastern "Middle Eastern"
-label var race_mixed "Mixed"
-label var race_other "Ethnicity Other"
-label var race_not_stated "Ethnicity not stated"
+label var m_race_total "Male Ethnicity Total"
+label var m_race_black "Male Black"
+label var m_race_white "Male White"
+label var m_race_oriental "Male Oriental"
+label var m_race_east_indian "Male East Indian"
+label var m_race_middle_eastern "Male Middle Eastern"
+label var m_race_mixed "Male Mixed"
+label var m_race_other "Male Ethnicity Other"
+label var m_race_not_stated "Male Ethnicity not stated"
 
 save "male_race_SES", replace
 
@@ -92,35 +92,35 @@ restore
 *Female Data
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Female" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B race_total
-rename C race_black
-rename D race_white
-rename E race_oriental
-rename F race_east_indian
-rename G race_middle_eastern
-rename H race_mixed
-rename I race_other
-rename J race_not_stated
+rename B f_race_total
+rename C f_race_black
+rename D f_race_white
+rename E f_race_oriental
+rename F f_race_east_indian
+rename G f_race_middle_eastern
+rename H f_race_mixed
+rename I f_race_other
+rename J f_race_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var race_total "Ethnicity Total"
-label var race_black "Black"
-label var race_white "White"
-label var race_oriental "Oriental"
-label var race_east_indian "East Indian"
-label var race_middle_eastern "Middle Eastern"
-label var race_mixed "Mixed"
-label var race_other "Ethnicity Other"
-label var race_not_stated "Ethnicity not stated"
+label var f_race_total "Female Ethnicity Total"
+label var f_race_black "Female Black"
+label var f_race_white "Female White"
+label var f_race_oriental "Female Oriental"
+label var f_race_east_indian "Female East Indian"
+label var f_race_middle_eastern "Female Middle Eastern"
+label var f_race_mixed "Female Mixed"
+label var f_race_other "Female Ethnicity Other"
+label var f_race_not_stated "Female Ethnicity not stated"
 
 save "female_race_SES", replace
 
@@ -130,35 +130,35 @@ restore
 *Total Data
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Total" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B race_total
-rename C race_black
-rename D race_white
-rename E race_oriental
-rename F race_east_indian
-rename G race_middle_eastern
-rename H race_mixed
-rename I race_other
-rename J race_not_stated
+rename B t_race_total
+rename C t_race_black
+rename D t_race_white
+rename E t_race_oriental
+rename F t_race_east_indian
+rename G t_race_middle_eastern
+rename H t_race_mixed
+rename I t_race_other
+rename J t_race_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var race_total "Ethnicity Total"
-label var race_black "Black"
-label var race_white "White"
-label var race_oriental "Oriental"
-label var race_east_indian "East Indian"
-label var race_middle_eastern "Middle Eastern"
-label var race_mixed "Mixed"
-label var race_other "Ethnicity Other"
-label var race_not_stated "Ethnicity not stated"
+label var t_race_total "Total Ethnicity Total"
+label var t_race_black "Total Black"
+label var t_race_white "Total White"
+label var t_race_oriental "Total Oriental"
+label var t_race_east_indian "Total East Indian"
+label var t_race_middle_eastern "Total Middle Eastern"
+label var t_race_mixed "Total Mixed"
+label var t_race_other "Total Ethnicity Other"
+label var t_race_not_stated "Total Ethnicity not stated"
 
 save "total_race_SES", replace
 
@@ -174,43 +174,43 @@ import excel "/Users/kernrocke/The University of the West Indies/DataGroup - Str
 *Male
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Male" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B age_total
-rename C age_median
-rename D age_0_9
-rename E age_10_19
-rename F age_20_29
-rename G age_30_39
-rename H age_40_49
-rename I age_50_59
-rename J age_60_69
-rename K age_70_79
-rename L age_80_89
-rename M age_90_99
-rename N age_100_over
+rename B m_age_total
+rename C m_age_median
+rename D m_age_0_9
+rename E m_age_10_19
+rename F m_age_20_29
+rename G m_age_30_39
+rename H m_age_40_49
+rename I m_age_50_59
+rename J m_age_60_69
+rename K m_age_70_79
+rename L m_age_80_89
+rename M m_age_90_99
+rename N m_age_100_over
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var age_total "Total age"
-label var age_median "Median age"
-label var age_0_9 "0-9 years"
-label var age_10_19 "10-19 years"
-label var age_20_29 "20-29 years"
-label var age_30_39 "30-39 years"
-label var age_40_49 "40-49 years"
-label var age_50_59 "50-59 years"
-label var age_60_69 "60-69 years"
-label var age_70_79 "70-79 years"
-label var age_80_89 "80-89 years"
-label var age_90_99 "90-99 years"
-label var age_100_over "100 years and over"
+label var m_age_total "Male age Total"
+label var m_age_median "Male Median age"
+label var m_age_0_9 "Male 0-9 years"
+label var m_age_10_19 "Male 10-19 years"
+label var m_age_20_29 "Male 20-29 years"
+label var m_age_30_39 "Male 30-39 years"
+label var m_age_40_49 "Male 40-49 years"
+label var m_age_50_59 "Male 50-59 years"
+label var m_age_60_69 "Male 60-69 years"
+label var m_age_70_79 "Male 70-79 years"
+label var m_age_80_89 "Male 80-89 years"
+label var m_age_90_99 "Male 90-99 years"
+label var m_age_100_over "Male 100 years and over"
 
 save "male_age_SES", replace
 
@@ -220,43 +220,43 @@ restore
 *Female
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Female" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B age_total
-rename C age_median
-rename D age_0_9
-rename E age_10_19
-rename F age_20_29
-rename G age_30_39
-rename H age_40_49
-rename I age_50_59
-rename J age_60_69
-rename K age_70_79
-rename L age_80_89
-rename M age_90_99
-rename N age_100_over
+rename B f_age_total
+rename C f_age_median
+rename D f_age_0_9
+rename E f_age_10_19
+rename F f_age_20_29
+rename G f_age_30_39
+rename H f_age_40_49
+rename I f_age_50_59
+rename J f_age_60_69
+rename K f_age_70_79
+rename L f_age_80_89
+rename M f_age_90_99
+rename N f_age_100_over
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var age_total "Total age"
-label var age_median "Median age"
-label var age_0_9 "0-9 years"
-label var age_10_19 "10-19 years"
-label var age_20_29 "20-29 years"
-label var age_30_39 "30-39 years"
-label var age_40_49 "40-49 years"
-label var age_50_59 "50-59 years"
-label var age_60_69 "60-69 years"
-label var age_70_79 "70-79 years"
-label var age_80_89 "80-89 years"
-label var age_90_99 "90-99 years"
-label var age_100_over "100 years and over"
+label var f_age_total "Female age Total"
+label var f_age_median "Female Median age"
+label var f_age_0_9 "Female 0-9 years"
+label var f_age_10_19 "Female 10-19 years"
+label var f_age_20_29 "Female 20-29 years"
+label var f_age_30_39 "Female 30-39 years"
+label var f_age_40_49 "Female 40-49 years"
+label var f_age_50_59 "Female 50-59 years"
+label var f_age_60_69 "Female 60-69 years"
+label var f_age_70_79 "Female 70-79 years"
+label var f_age_80_89 "Female 80-89 years"
+label var f_age_90_99 "Female 90-99 years"
+label var f_age_100_over "Female 100 years and over"
 
 save "female_age_SES", replace
 
@@ -266,43 +266,43 @@ restore
 *Total
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Total" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B age_total
-rename C age_median
-rename D age_0_9
-rename E age_10_19
-rename F age_20_29
-rename G age_30_39
-rename H age_40_49
-rename I age_50_59
-rename J age_60_69
-rename K age_70_79
-rename L age_80_89
-rename M age_90_99
-rename N age_100_over
+rename B t_age_total
+rename C t_age_median
+rename D t_age_0_9
+rename E t_age_10_19
+rename F t_age_20_29
+rename G t_age_30_39
+rename H t_age_40_49
+rename I t_age_50_59
+rename J t_age_60_69
+rename K t_age_70_79
+rename L t_age_80_89
+rename M t_age_90_99
+rename N t_age_100_over
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var age_total "Total age"
-label var age_median "Median age"
-label var age_0_9 "0-9 years"
-label var age_10_19 "10-19 years"
-label var age_20_29 "20-29 years"
-label var age_30_39 "30-39 years"
-label var age_40_49 "40-49 years"
-label var age_50_59 "50-59 years"
-label var age_60_69 "60-69 years"
-label var age_70_79 "70-79 years"
-label var age_80_89 "80-89 years"
-label var age_90_99 "90-99 years"
-label var age_100_over "100 years and over"
+label var t_age_total "Total age Total"
+label var t_age_median "Total Median age"
+label var t_age_0_9 "Total 0-9 years"
+label var t_age_10_19 "Total 10-19 years"
+label var t_age_20_29 "Total 20-29 years"
+label var t_age_30_39 "Total 30-39 years"
+label var t_age_40_49 "Total 40-49 years"
+label var t_age_50_59 "Total 50-59 years"
+label var t_age_60_69 "Total 60-69 years"
+label var t_age_70_79 "Total 70-79 years"
+label var t_age_80_89 "Total 80-89 years"
+label var t_age_90_99 "Total 90-99 years"
+label var t_age_100_over "Total 100 years and over"
 
 save "total_age_SES", replace
 
@@ -317,6 +317,7 @@ import excel "/Users/kernrocke/The University of the West Indies/DataGroup - Str
 
 preserve
 
+*Data cleaning tasks
 drop in 1/4
 destring, replace
 
@@ -368,6 +369,7 @@ import excel "/Users/kernrocke/The University of the West Indies/DataGroup - Str
 
 preserve
 
+*Data cleaning tasks
 drop in 1/4
 destring, replace
 
@@ -404,6 +406,7 @@ import excel "/Users/kernrocke/The University of the West Indies/DataGroup - Str
 
 preserve
 
+*Data cleaning tasks
 drop in 1/4
 destring, replace
 
@@ -451,6 +454,7 @@ import excel "/Users/kernrocke/The University of the West Indies/DataGroup - Str
 
 preserve
 
+*Data cleaning tasks
 drop in 1/4
 destring, replace
 
@@ -496,37 +500,37 @@ import excel "/Users/kernrocke/The University of the West Indies/DataGroup - Str
 *Male Data
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Male" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B education_total
-rename C education_preprimary
-rename D education_primary
-rename E education_composite
-rename F education_secondary
-rename G education_post_secondary
-rename H education_tertiary
-rename I education_other
-rename J education_none
-rename K education_not_stated
+rename B m_education_total
+rename C m_education_preprimary
+rename D m_education_primary
+rename E m_education_composite
+rename F m_education_secondary
+rename G m_education_post_secondary
+rename H m_education_tertiary
+rename I m_education_other
+rename J m_education_none
+rename K m_education_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var education_total "Education Total"
-label var education_preprimary "Preprimary"
-label var education_primary "Primary"
-label var education_composite "Senior/Composite"
-label var education_secondary "Secondary"
-label var education_post_secondary "Post Secondary"
-label var education_tertiary "Tertiary"
-label var education_other "Education- Other"
-label var education_none "Education None"
-label var education_not_stated "Education not stated"
+label var m_education_total "Male Education Total"
+label var m_education_preprimary "Male Preprimary"
+label var m_education_primary "Male Primary"
+label var m_education_composite "Male Senior/Composite"
+label var m_education_secondary "Male Secondary"
+label var m_education_post_secondary "Male Post Secondary"
+label var m_education_tertiary "Male Tertiary"
+label var m_education_other "Male Education- Other"
+label var m_education_none "Male Education None"
+label var m_education_not_stated "Male Education not stated"
 
 save "male_education_SES", replace
 
@@ -537,37 +541,37 @@ restore
 *Female Data
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Female" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B education_total
-rename C education_preprimary
-rename D education_primary
-rename E education_composite
-rename F education_secondary
-rename G education_post_secondary
-rename H education_tertiary
-rename I education_other
-rename J education_none
-rename K education_not_stated
+rename B f_education_total
+rename C f_education_preprimary
+rename D f_education_primary
+rename E f_education_composite
+rename F f_education_secondary
+rename G f_education_post_secondary
+rename H f_education_tertiary
+rename I f_education_other
+rename J f_education_none
+rename K f_education_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var education_total "Education Total"
-label var education_preprimary "Preprimary"
-label var education_primary "Primary"
-label var education_composite "Senior/Composite"
-label var education_secondary "Secondary"
-label var education_post_secondary "Post Secondary"
-label var education_tertiary "Tertiary"
-label var education_other "Education- Other"
-label var education_none "Education None"
-label var education_not_stated "Education not stated"
+label var f_education_total "Female Education Total"
+label var f_education_preprimary "Female Preprimary"
+label var f_education_primary "Female Primary"
+label var f_education_composite "Female Senior/Composite"
+label var f_education_secondary "Female Secondary"
+label var f_education_post_secondary "Female Post Secondary"
+label var f_education_tertiary "Female Tertiary"
+label var f_education_other "Female Education- Other"
+label var f_education_none "Female Education None"
+label var f_education_not_stated "Female Education not stated"
 
 save "female_education_SES", replace
 
@@ -577,37 +581,37 @@ restore
 *Total Data
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Total" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B education_total
-rename C education_preprimary
-rename D education_primary
-rename E education_composite
-rename F education_secondary
-rename G education_post_secondary
-rename H education_tertiary
-rename I education_other
-rename J education_none
-rename K education_not_stated
+rename B t_education_total
+rename C t_education_preprimary
+rename D t_education_primary
+rename E t_education_composite
+rename F t_education_secondary
+rename G t_education_post_secondary
+rename H t_education_tertiary
+rename I t_education_other
+rename J t_education_none
+rename K t_education_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var education_total "Education Total"
-label var education_preprimary "Preprimary"
-label var education_primary "Primary"
-label var education_composite "Senior/Composite"
-label var education_secondary "Secondary"
-label var education_post_secondary "Post Secondary"
-label var education_tertiary "Tertiary"
-label var education_other "Education- Other"
-label var education_none "Education None"
-label var education_not_stated "Education not stated"
+label var t_education_total "Total Education Total"
+label var t_education_preprimary "Total Preprimary"
+label var t_education_primary "Total Primary"
+label var t_education_composite "Total Senior/Composite"
+label var t_education_secondary "Total Secondary"
+label var t_education_post_secondary "Total Post Secondary"
+label var t_education_tertiary "Total Tertiary"
+label var t_education_other "Total Education- Other"
+label var t_education_none "Total Education None"
+label var t_education_not_stated "Total Education not stated"
 
 save "total_education_SES", replace
 
@@ -623,35 +627,35 @@ import excel "/Users/kernrocke/The University of the West Indies/DataGroup - Str
 *Male Data
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Male" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B income_total
-rename C income_median
-rename D income_0_49
-rename E income_50_99
-rename F income_100_149
-rename G income_150_199
-rename H income_200_over
-rename I income_other
-rename J income_not_stated
+rename B m_income_total
+rename C m_income_median
+rename D m_income_0_49
+rename E m_income_50_99
+rename F m_income_100_149
+rename G m_income_150_199
+rename H m_income_200_over
+rename I m_income_other
+rename J m_income_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var income_total "Income Total"
-label var income_median "Median Income"
-label var income_0_49 "$0 - 49999"
-label var income_50_99 "$50000 - 99999"
-label var income_100_149 "$100000 - 149999"
-label var income_150_199 "$150000 - 199999"
-label var income_200_over "$200000 and over"
-label var income_other "Income other"
-label var income_not_stated "Income not stated"
+label var m_income_total "Male Income Total"
+label var m_income_median "Male Median Income"
+label var m_income_0_49 "Male $0 - 49999"
+label var m_income_50_99 "Male $50000 - 99999"
+label var m_income_100_149 "Male $100000 - 149999"
+label var m_income_150_199 "Male $150000 - 199999"
+label var m_income_200_over "Male $200000 and over"
+label var m_income_other "Male Income other"
+label var m_income_not_stated "Male Income not stated"
 
 save "male_income_SES", replace
 
@@ -662,35 +666,35 @@ restore
 *Female Data
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Female" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B income_total
-rename C income_median
-rename D income_0_49
-rename E income_50_99
-rename F income_100_149
-rename G income_150_199
-rename H income_200_over
-rename I income_other
-rename J income_not_stated
+rename B f_income_total
+rename C f_income_median
+rename D f_income_0_49
+rename E f_income_50_99
+rename F f_income_100_149
+rename G f_income_150_199
+rename H f_income_200_over
+rename I f_income_other
+rename J f_income_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var income_total "Income Total"
-label var income_median "Median Income"
-label var income_0_49 "$0 - 49999"
-label var income_50_99 "$50000 - 99999"
-label var income_100_149 "$100000 - 149999"
-label var income_150_199 "$150000 - 199999"
-label var income_200_over "$200000 and over"
-label var income_other "Income other"
-label var income_not_stated "Income not stated"
+label var f_income_total "Female Income Total"
+label var f_income_median "Female Median Income"
+label var f_income_0_49 "Female $0 - 49999"
+label var f_income_50_99 "Female $50000 - 99999"
+label var f_income_100_149 "Female $100000 - 149999"
+label var f_income_150_199 "Female $150000 - 199999"
+label var f_income_200_over "Female $200000 and over"
+label var f_income_other "Female Income other"
+label var f_income_not_stated "Female Income not stated"
 
 save "female_income_SES", replace
 
@@ -701,36 +705,36 @@ restore
 *Total Data
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Total" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B income_total
-rename C income_median
-rename D income_0_49
-rename E income_50_99
-rename F income_100_149
-rename G income_150_199
-rename H income_200_over
-rename I income_other
-rename J income_not_stated
+rename B t_income_total
+rename C t_income_median
+rename D t_income_0_49
+rename E t_income_50_99
+rename F t_income_100_149
+rename G t_income_150_199
+rename H t_income_200_over
+rename I t_income_other
+rename J t_income_not_stated
 
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var income_total "Income Total"
-label var income_median "Median Income"
-label var income_0_49 "$0 - 49999"
-label var income_50_99 "$50000 - 99999"
-label var income_100_149 "$100000 - 149999"
-label var income_150_199 "$150000 - 199999"
-label var income_200_over "$200000 and over"
-label var income_other "Income other"
-label var income_not_stated "Income not stated"
+label var t_income_total "Total Income Total"
+label var t_income_median "Total Median Income"
+label var t_income_0_49 "Total $0 - 49999"
+label var t_income_50_99 "Total $50000 - 99999"
+label var t_income_100_149 "Total $100000 - 149999"
+label var t_income_150_199 "Total $150000 - 199999"
+label var t_income_200_over "Total $200000 and over"
+label var t_income_other "Total Income other"
+label var t_income_not_stated "Total Income not stated"
 
 save "total_income_SES", replace
 
@@ -746,37 +750,37 @@ import excel "/Users/kernrocke/The University of the West Indies/DataGroup - Str
 *Male Data
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Male" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B mactivity_total
-rename C mactivity_worked
-rename D mactivity_j_notworking
-rename E mactivity_look_work
-rename F mactivity_home
-rename G mactivity_student
-rename H mactivity_retired
-rename I mactivity_incapacitated
-rename J mactivity_other
-rename K mactivity_not_stated
+rename B m_mactivity_total
+rename C m_mactivity_worked
+rename D m_mactivity_j_notworking
+rename E m_mactivity_look_work
+rename F m_mactivity_home
+rename G m_mactivity_student
+rename H m_mactivity_retired
+rename I m_mactivity_incapacitated
+rename J m_mactivity_other
+rename K m_mactivity_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var mactivity_total "Main Activity Total"
-label var mactivity_worked "Main Activity Worked"
-label var mactivity_j_notworking "Main Activity With Job Not Working"
-label var mactivity_look_work "Main Activity Looked for Work"
-label var mactivity_home "Main Activity Home Duties"
-label var mactivity_student "Main Activity Student"
-label var mactivity_retired "Main Activity Retired"
-label var mactivity_incapacitated "Main Activity Incapacitated"
-label var mactivity_other "Main Activity Other"
-label var mactivity_not_stated "Main Activity Not Stated"
+label var m_mactivity_total "Male Main Activity Total"
+label var m_mactivity_worked "Male Main Activity Worked"
+label var m_mactivity_j_notworking "Male Main Activity With Job Not Working"
+label var m_mactivity_look_work "Male Main Activity Looked for Work"
+label var m_mactivity_home "Male Main Activity Home Duties"
+label var m_mactivity_student "Male Main Activity Student"
+label var m_mactivity_retired "Male Main Activity Retired"
+label var m_mactivity_incapacitated "Male Main Activity Incapacitated"
+label var m_mactivity_other "Male Main Activity Other"
+label var m_mactivity_not_stated "Male Main Activity Not Stated"
 
 save "male_mactivity_SES", replace
 
@@ -787,37 +791,37 @@ restore
 *Female Data
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Female" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B mactivity_total
-rename C mactivity_worked
-rename D mactivity_j_notworking
-rename E mactivity_look_work
-rename F mactivity_home
-rename G mactivity_student
-rename H mactivity_retired
-rename I mactivity_incapacitated
-rename J mactivity_other
-rename K mactivity_not_stated
+rename B f_mactivity_total
+rename C f_mactivity_worked
+rename D f_mactivity_j_notworking
+rename E f_mactivity_look_work
+rename F f_mactivity_home
+rename G f_mactivity_student
+rename H f_mactivity_retired
+rename I f_mactivity_incapacitated
+rename J f_mactivity_other
+rename K f_mactivity_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var mactivity_total "Main Activity Total"
-label var mactivity_worked "Main Activity Worked"
-label var mactivity_j_notworking "Main Activity With Job Not Working"
-label var mactivity_look_work "Main Activity Looked for Work"
-label var mactivity_home "Main Activity Home Duties"
-label var mactivity_student "Main Activity Student"
-label var mactivity_retired "Main Activity Retired"
-label var mactivity_incapacitated "Main Activity Incapacitated"
-label var mactivity_other "Main Activity Other"
-label var mactivity_not_stated "Main Activity Not Stated"
+label var f_mactivity_total "Female Main Activity Total"
+label var f_mactivity_worked "Female Main Activity Worked"
+label var f_mactivity_j_notworking "Female Main Activity With Job Not Working"
+label var f_mactivity_look_work "Female Main Activity Looked for Work"
+label var f_mactivity_home "Female Main Activity Home Duties"
+label var f_mactivity_student "Female Main Activity Student"
+label var f_mactivity_retired "Female Main Activity Retired"
+label var f_mactivity_incapacitated "Female Main Activity Incapacitated"
+label var f_mactivity_other "Female Main Activity Other"
+label var f_mactivity_not_stated "Female Main Activity Not Stated"
 
 save "female_mactivity_SES", replace
 
@@ -828,37 +832,37 @@ restore
 *Total Data
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Total" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B mactivity_total
-rename C mactivity_worked
-rename D mactivity_j_notworking
-rename E mactivity_look_work
-rename F mactivity_home
-rename G mactivity_student
-rename H mactivity_retired
-rename I mactivity_incapacitated
-rename J mactivity_other
-rename K mactivity_not_stated
+rename B t_mactivity_total
+rename C t_mactivity_worked
+rename D t_mactivity_j_notworking
+rename E t_mactivity_look_work
+rename F t_mactivity_home
+rename G t_mactivity_student
+rename H t_mactivity_retired
+rename I t_mactivity_incapacitated
+rename J t_mactivity_other
+rename K t_mactivity_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var mactivity_total "Main Activity Total"
-label var mactivity_worked "Main Activity Worked"
-label var mactivity_j_notworking "Main Activity With Job Not Working"
-label var mactivity_look_work "Main Activity Looked for Work"
-label var mactivity_home "Main Activity Home Duties"
-label var mactivity_student "Main Activity Student"
-label var mactivity_retired "Main Activity Retired"
-label var mactivity_incapacitated "Main Activity Incapacitated"
-label var mactivity_other "Main Activity Other"
-label var mactivity_not_stated "Main Activity Not Stated"
+label var t_mactivity_total "Total Main Activity Total"
+label var t_mactivity_worked "Total Main Activity Worked"
+label var t_mactivity_j_notworking "Total Main Activity With Job Not Working"
+label var t_mactivity_look_work "Total Main Activity Looked for Work"
+label var t_mactivity_home "Total Main Activity Home Duties"
+label var t_mactivity_student "Total Main Activity Student"
+label var t_mactivity_retired "Total Main Activity Retired"
+label var t_mactivity_incapacitated "Total Main Activity Incapacitated"
+label var t_mactivity_other "Total Main Activity Other"
+label var t_mactivity_not_stated "Total Main Activity Not Stated"
 
 save "total_mactivity_SES", replace
 
@@ -874,6 +878,7 @@ import excel "/Users/kernrocke/The University of the West Indies/DataGroup - Str
 *Male Data
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Male" 
 destring, replace
@@ -881,32 +886,30 @@ egen ED = seq()
 order ED
 
 *Renaming and labelling variabels
-rename A sex
-rename B wactivity_total
-rename C wactivity_government
-rename D wactivity_private_enterprise
-rename E wactivity_private_house
-rename F wactivity_other
-rename G wactivity_unpaid_work
-rename H wactivity_paid_help
-rename I wactivity_unpaid_help
-rename J wactivity_no_work
-rename K wactivity_other_2
-rename L wactivity_not_stated
+rename B m_wactivity_total
+rename C m_wactivity_government
+rename D m_wactivity_private_enterprise
+rename E m_wactivity_private_house
+rename F m_wactivity_other
+rename G m_wactivity_unpaid_work
+rename H m_wactivity_paid_help
+rename I m_wactivity_unpaid_help
+rename J m_wactivity_no_work
+rename K m_wactivity_other_2
+rename L m_wactivity_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var wactivity_total "Work Activity Total"
-label var wactivity_government "Government Work Activity"
-label var wactivity_private_enterprise "Private Enterprise Work Activity"
-label var wactivity_private_house "Private household Work Activity"
-label var wactivity_other "Other Work Activity"
-label var wactivity_unpaid_work "Unpaid Worker Work Activity"
-label var wactivity_paid_help "Paid Help Work Activity"
-label var wactivity_unpaid_help "Unpaid Help Work Activity"
-label var wactivity_no_work "Did not Work Work Activity"
-label var wactivity_other_2 "Other 2 Work Activity"
-label var wactivity_not_stated "Not stated Work Activity"
+label var m_wactivity_total "Male Work Activity Total"
+label var m_wactivity_government "Male Government Work Activity"
+label var m_wactivity_private_enterprise "Male Private Enterprise Work Activity"
+label var m_wactivity_private_house "Male Private household Work Activity"
+label var m_wactivity_other "Male Other Work Activity"
+label var m_wactivity_unpaid_work "Male Unpaid Worker Work Activity"
+label var m_wactivity_paid_help "Male Paid Help Work Activity"
+label var m_wactivity_unpaid_help "Male Unpaid Help Work Activity"
+label var m_wactivity_no_work "Male Did not Work Work Activity"
+label var m_wactivity_other_2 "Male Other 2 Work Activity"
+label var m_wactivity_not_stated "Male Not stated Work Activity"
 
 save "male_wactivity_SES", replace
 
@@ -917,39 +920,39 @@ restore
 *Female Data
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Female" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B wactivity_total
-rename C wactivity_government
-rename D wactivity_private_enterprise
-rename E wactivity_private_house
-rename F wactivity_other
-rename G wactivity_unpaid_work
-rename H wactivity_paid_help
-rename I wactivity_unpaid_help
-rename J wactivity_no_work
-rename K wactivity_other_2
-rename L wactivity_not_stated
+rename B f_wactivity_total
+rename C f_wactivity_government
+rename D f_wactivity_private_enterprise
+rename E f_wactivity_private_house
+rename F f_wactivity_other
+rename G f_wactivity_unpaid_work
+rename H f_wactivity_paid_help
+rename I f_wactivity_unpaid_help
+rename J f_wactivity_no_work
+rename K f_wactivity_other_2
+rename L f_wactivity_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var wactivity_total "Work Activity Total"
-label var wactivity_government "Government Work Activity"
-label var wactivity_private_enterprise "Private Enterprise Work Activity"
-label var wactivity_private_house "Private household Work Activity"
-label var wactivity_other "Other Work Activity"
-label var wactivity_unpaid_work "Unpaid Worker Work Activity"
-label var wactivity_paid_help "Paid Help Work Activity"
-label var wactivity_unpaid_help "Unpaid Help Work Activity"
-label var wactivity_no_work "Did not Work Work Activity"
-label var wactivity_other_2 "Other 2 Work Activity"
-label var wactivity_not_stated "Not stated Work Activity"
+label var f_wactivity_total "Female Work Activity Total"
+label var f_wactivity_government "Female Government Work Activity"
+label var f_wactivity_private_enterprise "Female Private Enterprise Work Activity"
+label var f_wactivity_private_house "Female Private household Work Activity"
+label var f_wactivity_other "Female Other Work Activity"
+label var f_wactivity_unpaid_work "Female Unpaid Worker Work Activity"
+label var f_wactivity_paid_help "Female Paid Help Work Activity"
+label var f_wactivity_unpaid_help "Female Unpaid Help Work Activity"
+label var f_wactivity_no_work "Female Did not Work Work Activity"
+label var f_wactivity_other_2 "Female Other 2 Work Activity"
+label var f_wactivity_not_stated "Female Not stated Work Activity"
 
 save "female_wactivity_SES", replace
 
@@ -960,39 +963,39 @@ restore
 *Total Data
 preserve
 
+*Data cleaning tasks
 drop in 1/11
 keep if A=="Total" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B wactivity_total
-rename C wactivity_government
-rename D wactivity_private_enterprise
-rename E wactivity_private_house
-rename F wactivity_other
-rename G wactivity_unpaid_work
-rename H wactivity_paid_help
-rename I wactivity_unpaid_help
-rename J wactivity_no_work
-rename K wactivity_other_2
-rename L wactivity_not_stated
+rename B t_wactivity_total
+rename C t_wactivity_government
+rename D t_wactivity_private_enterprise
+rename E t_wactivity_private_house
+rename F t_wactivity_other
+rename G t_wactivity_unpaid_work
+rename H t_wactivity_paid_help
+rename I t_wactivity_unpaid_help
+rename J t_wactivity_no_work
+rename K t_wactivity_other_2
+rename L t_wactivity_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var wactivity_total "Work Activity Total"
-label var wactivity_government "Government Work Activity"
-label var wactivity_private_enterprise "Private Enterprise Work Activity"
-label var wactivity_private_house "Private household Work Activity"
-label var wactivity_other "Other Work Activity"
-label var wactivity_unpaid_work "Unpaid Worker Work Activity"
-label var wactivity_paid_help "Paid Help Work Activity"
-label var wactivity_unpaid_help "Unpaid Help Work Activity"
-label var wactivity_no_work "Did not Work Work Activity"
-label var wactivity_other_2 "Other 2 Work Activity"
-label var wactivity_not_stated "Not stated Work Activity"
+label var t_wactivity_total "Total Work Activity Total"
+label var t_wactivity_government "Total Government Work Activity"
+label var t_wactivity_private_enterprise "Total Private Enterprise Work Activity"
+label var t_wactivity_private_house "Total Private household Work Activity"
+label var t_wactivity_other "Total Other Work Activity"
+label var t_wactivity_unpaid_work "Total Unpaid Worker Work Activity"
+label var t_wactivity_paid_help "Total Paid Help Work Activity"
+label var t_wactivity_unpaid_help "Total Unpaid Help Work Activity"
+label var t_wactivity_no_work "Total Did not Work Work Activity"
+label var t_wactivity_other_2 "Total Other 2 Work Activity"
+label var t_wactivity_not_stated "Total Not stated Work Activity"
 
 save "total_wactivity_SES", replace
 
@@ -1007,6 +1010,7 @@ import excel "/Users/kernrocke/The University of the West Indies/DataGroup - Str
 
 preserve
 
+*Data cleaning tasks
 drop in 1/4
 destring, replace
 
@@ -1058,6 +1062,7 @@ import excel "/Users/kernrocke/The University of the West Indies/DataGroup - Str
 
 preserve
 
+*Data cleaning tasks
 drop in 1/4
 destring, replace
 
@@ -1106,6 +1111,7 @@ import excel "/Users/kernrocke/The University of the West Indies/DataGroup - Str
 
 preserve
 
+*Data cleaning tasks
 drop in 1/4
 destring, replace
 
@@ -1150,102 +1156,102 @@ import excel "/Users/kernrocke/The University of the West Indies/DataGroup - Str
 *Male Data
 preserve
 
-drop AR
+*Data cleaning tasks
+drop AR 
 drop in 1/9
 keep if A=="Male" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B occupation_total
-rename C occupation_a_forces
-rename D occupation_exec
-rename E occupation_admin_mange
-rename F occupation_prod_mange
-rename G occupation_hosp_mange
-rename H occupation_sci_prof
-rename I occupation_health_prof
-rename J occupation_teach_prof
-rename K occupation_busi_prof
-rename L occupation_info_prof
-rename M occupation_legal_prof
-rename N occupation_sci_a_prof
-rename O occupation_health_a_prof
-rename P occupation_busi_a_prof
-rename Q occupation_legal_a_prof
-rename R occupation_info_tech
-rename S occupation_gen_clerk
-rename T occupation_cust_clerk
-rename U occupation_num_clerk
-rename V occupation_other_clerk
-rename W occupation_per_work
-rename X occupation_sale_work
-rename Y occupation_care_work
-rename Z occupation_prot_work
-rename AA occupation_mar_agri
-rename AB occupation_mar_fores
-rename AC occupation_s_farm
-rename AD occupation_build_work
-rename AE occupation_metal_work
-rename AF occupation_handicraft
-rename AG occupation_elec_work
-rename AH occupation_food_process
-rename AI occupation_plant_assemble
-rename AJ occupation_drive_oper
-rename AK occupation_clean
-rename AL occupation_agri_labour
-rename AM occupation_mining_labour
-rename AN occupation_food_prep
-rename AO occupation_street_ser
-rename AP occupation_refuse_work
-rename AQ occupation_not_stated
+rename B m_occupation_total
+rename C m_occupation_a_forces
+rename D m_occupation_exec
+rename E m_occupation_admin_mange
+rename F m_occupation_prod_mange
+rename G m_occupation_hosp_mange
+rename H m_occupation_sci_prof
+rename I m_occupation_health_prof
+rename J m_occupation_teach_prof
+rename K m_occupation_busi_prof
+rename L m_occupation_info_prof
+rename M m_occupation_legal_prof
+rename N m_occupation_sci_a_prof
+rename O m_occupation_health_a_prof
+rename P m_occupation_busi_a_prof
+rename Q m_occupation_legal_a_prof
+rename R m_occupation_info_tech
+rename S m_occupation_gen_clerk
+rename T m_occupation_cust_clerk
+rename U m_occupation_num_clerk
+rename V m_occupation_other_clerk
+rename W m_occupation_per_work
+rename X m_occupation_sale_work
+rename Y m_occupation_care_work
+rename Z m_occupation_prot_work
+rename AA m_occupation_mar_agri
+rename AB m_occupation_mar_fores
+rename AC m_occupation_s_farm
+rename AD m_occupation_build_work
+rename AE m_occupation_metal_work
+rename AF m_occupation_handicraft
+rename AG m_occupation_elec_work
+rename AH m_occupation_food_process
+rename AI m_occupation_plant_assemble
+rename AJ m_occupation_drive_oper
+rename AK m_occupation_clean
+rename AL m_occupation_agri_labour
+rename AM m_occupation_mining_labour
+rename AN m_occupation_food_prep
+rename AO m_occupation_street_ser
+rename AP m_occupation_refuse_work
+rename AQ m_occupation_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var occupation_total "Occupation Total"
-label var occupation_a_forces "Armed Forces Occupation"
-label var occupation_exec "Chief executives, senior officials and legislators Occupation"
-label var occupation_admin_mange "Administrative and Commerical Managers Occupation"
-label var occupation_prod_mange "Production and Specialised Services Managers Occupation"
-label var occupation_hosp_mange "Hospitality Retail and Other Services Managers Occupation"
-label var occupation_sci_prof "Science and Engineering Professionals Occupation"
-label var occupation_health_prof "Health Professionals Occupation"
-label var occupation_teach_prof "Teaching Professionals Occupation"
-label var occupation_busi_prof "Business and Administration Professionals Occupation"
-label var occupation_info_prof "Information and Communications Technology Professionals Occupation"
-label var occupation_legal_prof "Legal, Social and Cultural Professionals Occupation"
-label var occupation_sci_a_prof "Science and Engineering Associate Professionals Occupation"
-label var occupation_health_a_prof "Health Associate Professionals Occupation"
-label var occupation_busi_a_prof "Business and Administration Associate Professionals Occupation"
-label var occupation_legal_a_prof "Legal, Social, Cultural and Related Associate Professionals Occupation"
-label var occupation_info_tech "Information and Communications Technicians Occupation"
-label var occupation_gen_clerk "General and Keyboard Clerks Occupation"
-label var occupation_cust_clerk "Customer Services Clerks Occupation"
-label var occupation_num_clerk "Numerical and Material Recording Clerks Occupation"
-label var occupation_other_clerk "Other Clerical Support Workers Occupation"
-label var occupation_per_work "Personal Service Workers Occupation"
-label var occupation_sale_work "Sales Workers Occupation"
-label var occupation_care_work "Personal Care Workers Occupation"
-label var occupation_prot_work "Protective Services Workers Occupation"
-label var occupation_mar_agri "Market-oriented Skilled Agricultural Workers Occupation"
-label var occupation_mar_fores "Market-oriented Skilled Forestry, Fishery and Hunting Workers Occupation"
-label var occupation_s_farm "Subsistence Farmers, Fishers, Hunters and Gatherers Occupation"
-label var occupation_build_work "Building and related trades Workers Excluding electricians Occupation"
-label var occupation_metal_work "Metal Machinery and Related Trades Workers Occupation"
-label var occupation_handicraft "Handicraft and Printing Workers Occupation"
-label var occupation_elec_work "Electrical and Electronic Trades Workers Occupation"
-label var occupation_food_process "Food Processing, Wood Working, Garment and Other Craft and Related Trades Workers Occupation"
-label var occupation_plant_assemble "Stationary Plant and Machine Operators and Assemblers Occupation"
-label var occupation_drive_oper "Drivers and Mobile Plant Operators Occupation"
-label var occupation_clean "Cleaners and Helpers Occupation"
-label var occupation_agri_labour "Agricultural Forestry and Fishery Labourers Occupation"
-label var occupation_mining_labour "Labourers in Mining Construction Manufacturing and Transport Occupation"
-label var occupation_food_prep "Food Preparation Assistants"
-label var occupation_street_ser "Street and Related Sales and Service Workers Occupation"
-label var occupation_refuse_work "Refuse Workers and other Elementary Workers Occupation"
-label var occupation_not_stated "Occupation Not Stated"
+label var m_occupation_total "Male Occupation Total"
+label var m_occupation_a_forces "Male Armed Forces Occupation"
+label var m_occupation_exec "Male Chief executives, senior officials and legislators Occupation"
+label var m_occupation_admin_mange "Male Administrative and Commerical Managers Occupation"
+label var m_occupation_prod_mange "Male Production and Specialised Services Managers Occupation"
+label var m_occupation_hosp_mange "Male Hospitality Retail and Other Services Managers Occupation"
+label var m_occupation_sci_prof "Male Science and Engineering Professionals Occupation"
+label var m_occupation_health_prof "Male Health Professionals Occupation"
+label var m_occupation_teach_prof "Male Teaching Professionals Occupation"
+label var m_occupation_busi_prof "Male Business and Administration Professionals Occupation"
+label var m_occupation_info_prof "Male Information and Communications Technology Professionals Occupation"
+label var m_occupation_legal_prof "Male Legal, Social and Cultural Professionals Occupation"
+label var m_occupation_sci_a_prof "Male Science and Engineering Associate Professionals Occupation"
+label var m_occupation_health_a_prof "Male Health Associate Professionals Occupation"
+label var m_occupation_busi_a_prof "Male Business and Administration Associate Professionals Occupation"
+label var m_occupation_legal_a_prof "Male Legal, Social, Cultural and Related Associate Professionals Occupation"
+label var m_occupation_info_tech "Male Information and Communications Technicians Occupation"
+label var m_occupation_gen_clerk "Male General and Keyboard Clerks Occupation"
+label var m_occupation_cust_clerk "Male Customer Services Clerks Occupation"
+label var m_occupation_num_clerk "Male Numerical and Material Recording Clerks Occupation"
+label var m_occupation_other_clerk "Male Other Clerical Support Workers Occupation"
+label var m_occupation_per_work "Male Personal Service Workers Occupation"
+label var m_occupation_sale_work "Male Sales Workers Occupation"
+label var m_occupation_care_work "Male Personal Care Workers Occupation"
+label var m_occupation_prot_work "Male Protective Services Workers Occupation"
+label var m_occupation_mar_agri "Male Market-oriented Skilled Agricultural Workers Occupation"
+label var m_occupation_mar_fores "Male Market-oriented Skilled Forestry, Fishery and Hunting Workers Occupation"
+label var m_occupation_s_farm "Male Subsistence Farmers, Fishers, Hunters and Gatherers Occupation"
+label var m_occupation_build_work "Male Building and related trades Workers Excluding electricians Occupation"
+label var m_occupation_metal_work "Male Metal Machinery and Related Trades Workers Occupation"
+label var m_occupation_handicraft "Male Handicraft and Printing Workers Occupation"
+label var m_occupation_elec_work "Male Electrical and Electronic Trades Workers Occupation"
+label var m_occupation_food_process "Male Food Processing, Wood Working, Garment and Other Craft and Related Trades Workers Occupation"
+label var m_occupation_plant_assemble "Male Stationary Plant and Machine Operators and Assemblers Occupation"
+label var m_occupation_drive_oper "Male Drivers and Mobile Plant Operators Occupation"
+label var m_occupation_clean "Male Cleaners and Helpers Occupation"
+label var m_occupation_agri_labour "Male Agricultural Forestry and Fishery Labourers Occupation"
+label var m_occupation_mining_labour "Male Labourers in Mining Construction Manufacturing and Transport Occupation"
+label var m_occupation_food_prep "Male Food Preparation Assistants"
+label var m_occupation_street_ser "Male Street and Related Sales and Service Workers Occupation"
+label var m_occupation_refuse_work "Male Refuse Workers and other Elementary Workers Occupation"
+label var m_occupation_not_stated "Male Occupation Not Stated"
 
 save "male_occupation_SES", replace
 
@@ -1256,102 +1262,102 @@ restore
 *Female Data
 preserve
 
-drop AR
+*Data cleaning tasks
+drop AR 
 drop in 1/9
 keep if A=="Female" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B occupation_total
-rename C occupation_a_forces
-rename D occupation_exec
-rename E occupation_admin_mange
-rename F occupation_prod_mange
-rename G occupation_hosp_mange
-rename H occupation_sci_prof
-rename I occupation_health_prof
-rename J occupation_teach_prof
-rename K occupation_busi_prof
-rename L occupation_info_prof
-rename M occupation_legal_prof
-rename N occupation_sci_a_prof
-rename O occupation_health_a_prof
-rename P occupation_busi_a_prof
-rename Q occupation_legal_a_prof
-rename R occupation_info_tech
-rename S occupation_gen_clerk
-rename T occupation_cust_clerk
-rename U occupation_num_clerk
-rename V occupation_other_clerk
-rename W occupation_per_work
-rename X occupation_sale_work
-rename Y occupation_care_work
-rename Z occupation_prot_work
-rename AA occupation_mar_agri
-rename AB occupation_mar_fores
-rename AC occupation_s_farm
-rename AD occupation_build_work
-rename AE occupation_metal_work
-rename AF occupation_handicraft
-rename AG occupation_elec_work
-rename AH occupation_food_process
-rename AI occupation_plant_assemble
-rename AJ occupation_drive_oper
-rename AK occupation_clean
-rename AL occupation_agri_labour
-rename AM occupation_mining_labour
-rename AN occupation_food_prep
-rename AO occupation_street_ser
-rename AP occupation_refuse_work
-rename AQ occupation_not_stated
+rename B f_occupation_total
+rename C f_occupation_a_forces
+rename D f_occupation_exec
+rename E f_occupation_admin_mange
+rename F f_occupation_prod_mange
+rename G f_occupation_hosp_mange
+rename H f_occupation_sci_prof
+rename I f_occupation_health_prof
+rename J f_occupation_teach_prof
+rename K f_occupation_busi_prof
+rename L f_occupation_info_prof
+rename M f_occupation_legal_prof
+rename N f_occupation_sci_a_prof
+rename O f_occupation_health_a_prof
+rename P f_occupation_busi_a_prof
+rename Q f_occupation_legal_a_prof
+rename R f_occupation_info_tech
+rename S f_occupation_gen_clerk
+rename T f_occupation_cust_clerk
+rename U f_occupation_num_clerk
+rename V f_occupation_other_clerk
+rename W f_occupation_per_work
+rename X f_occupation_sale_work
+rename Y f_occupation_care_work
+rename Z f_occupation_prot_work
+rename AA f_occupation_mar_agri
+rename AB f_occupation_mar_fores
+rename AC f_occupation_s_farm
+rename AD f_occupation_build_work
+rename AE f_occupation_metal_work
+rename AF f_occupation_handicraft
+rename AG f_occupation_elec_work
+rename AH f_occupation_food_process
+rename AI f_occupation_plant_assemble
+rename AJ f_occupation_drive_oper
+rename AK f_occupation_clean
+rename AL f_occupation_agri_labour
+rename AM f_occupation_mining_labour
+rename AN f_occupation_food_prep
+rename AO f_occupation_street_ser
+rename AP f_occupation_refuse_work
+rename AQ f_occupation_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var occupation_total "Occupation Total"
-label var occupation_a_forces "Armed Forces Occupation"
-label var occupation_exec "Chief executives, senior officials and legislators Occupation"
-label var occupation_admin_mange "Administrative and Commerical Managers Occupation"
-label var occupation_prod_mange "Production and Specialised Services Managers Occupation"
-label var occupation_hosp_mange "Hospitality Retail and Other Services Managers Occupation"
-label var occupation_sci_prof "Science and Engineering Professionals Occupation"
-label var occupation_health_prof "Health Professionals Occupation"
-label var occupation_teach_prof "Teaching Professionals Occupation"
-label var occupation_busi_prof "Business and Administration Professionals Occupation"
-label var occupation_info_prof "Information and Communications Technology Professionals Occupation"
-label var occupation_legal_prof "Legal, Social and Cultural Professionals Occupation"
-label var occupation_sci_a_prof "Science and Engineering Associate Professionals Occupation"
-label var occupation_health_a_prof "Health Associate Professionals Occupation"
-label var occupation_busi_a_prof "Business and Administration Associate Professionals Occupation"
-label var occupation_legal_a_prof "Legal, Social, Cultural and Related Associate Professionals Occupation"
-label var occupation_info_tech "Information and Communications Technicians Occupation"
-label var occupation_gen_clerk "General and Keyboard Clerks Occupation"
-label var occupation_cust_clerk "Customer Services Clerks Occupation"
-label var occupation_num_clerk "Numerical and Material Recording Clerks Occupation"
-label var occupation_other_clerk "Other Clerical Support Workers Occupation"
-label var occupation_per_work "Personal Service Workers Occupation"
-label var occupation_sale_work "Sales Workers Occupation"
-label var occupation_care_work "Personal Care Workers Occupation"
-label var occupation_prot_work "Protective Services Workers Occupation"
-label var occupation_mar_agri "Market-oriented Skilled Agricultural Workers Occupation"
-label var occupation_mar_fores "Market-oriented Skilled Forestry, Fishery and Hunting Workers Occupation"
-label var occupation_s_farm "Subsistence Farmers, Fishers, Hunters and Gatherers Occupation"
-label var occupation_build_work "Building and related trades Workers Excluding electricians Occupation"
-label var occupation_metal_work "Metal Machinery and Related Trades Workers Occupation"
-label var occupation_handicraft "Handicraft and Printing Workers Occupation"
-label var occupation_elec_work "Electrical and Electronic Trades Workers Occupation"
-label var occupation_food_process "Food Processing, Wood Working, Garment and Other Craft and Related Trades Workers Occupation"
-label var occupation_plant_assemble "Stationary Plant and Machine Operators and Assemblers Occupation"
-label var occupation_drive_oper "Drivers and Mobile Plant Operators Occupation"
-label var occupation_clean "Cleaners and Helpers Occupation"
-label var occupation_agri_labour "Agricultural Forestry and Fishery Labourers Occupation"
-label var occupation_mining_labour "Labourers in Mining Construction Manufacturing and Transport Occupation"
-label var occupation_food_prep "Food Preparation Assistants"
-label var occupation_street_ser "Street and Related Sales and Service Workers Occupation"
-label var occupation_refuse_work "Refuse Workers and other Elementary Workers Occupation"
-label var occupation_not_stated "Occupation Not Stated"
+label var f_occupation_total "Female Occupation Total"
+label var f_occupation_a_forces "Female Armed Forces Occupation"
+label var f_occupation_exec "Female Chief executives, senior officials and legislators Occupation"
+label var f_occupation_admin_mange "Female Administrative and Commerical Managers Occupation"
+label var f_occupation_prod_mange "Female Production and Specialised Services Managers Occupation"
+label var f_occupation_hosp_mange "Female Hospitality Retail and Other Services Managers Occupation"
+label var f_occupation_sci_prof "Female Science and Engineering Professionals Occupation"
+label var f_occupation_health_prof "Female Health Professionals Occupation"
+label var f_occupation_teach_prof "Female Teaching Professionals Occupation"
+label var f_occupation_busi_prof "Female Business and Administration Professionals Occupation"
+label var f_occupation_info_prof "Female Information and Communications Technology Professionals Occupation"
+label var f_occupation_legal_prof "Female Legal, Social and Cultural Professionals Occupation"
+label var f_occupation_sci_a_prof "Female Science and Engineering Associate Professionals Occupation"
+label var f_occupation_health_a_prof "Female Health Associate Professionals Occupation"
+label var f_occupation_busi_a_prof "Female Business and Administration Associate Professionals Occupation"
+label var f_occupation_legal_a_prof "Female Legal, Social, Cultural and Related Associate Professionals Occupation"
+label var f_occupation_info_tech "Female Information and Communications Technicians Occupation"
+label var f_occupation_gen_clerk "Female General and Keyboard Clerks Occupation"
+label var f_occupation_cust_clerk "Female Customer Services Clerks Occupation"
+label var f_occupation_num_clerk "Female Numerical and Material Recording Clerks Occupation"
+label var f_occupation_other_clerk "Female Other Clerical Support Workers Occupation"
+label var f_occupation_per_work "Female Personal Service Workers Occupation"
+label var f_occupation_sale_work "Female Sales Workers Occupation"
+label var f_occupation_care_work "Female Personal Care Workers Occupation"
+label var f_occupation_prot_work "Female Protective Services Workers Occupation"
+label var f_occupation_mar_agri "Female Market-oriented Skilled Agricultural Workers Occupation"
+label var f_occupation_mar_fores "Female Market-oriented Skilled Forestry, Fishery and Hunting Workers Occupation"
+label var f_occupation_s_farm "Female Subsistence Farmers, Fishers, Hunters and Gatherers Occupation"
+label var f_occupation_build_work "Female Building and related trades Workers Excluding electricians Occupation"
+label var f_occupation_metal_work "Female Metal Machinery and Related Trades Workers Occupation"
+label var f_occupation_handicraft "Female Handicraft and Printing Workers Occupation"
+label var f_occupation_elec_work "Female Electrical and Electronic Trades Workers Occupation"
+label var f_occupation_food_process "Female Food Processing, Wood Working, Garment and Other Craft and Related Trades Workers Occupation"
+label var f_occupation_plant_assemble "Female Stationary Plant and Machine Operators and Assemblers Occupation"
+label var f_occupation_drive_oper "Female Drivers and Mobile Plant Operators Occupation"
+label var f_occupation_clean "Female Cleaners and Helpers Occupation"
+label var f_occupation_agri_labour "Female Agricultural Forestry and Fishery Labourers Occupation"
+label var f_occupation_mining_labour "Female Labourers in Mining Construction Manufacturing and Transport Occupation"
+label var f_occupation_food_prep "Female Food Preparation Assistants"
+label var f_occupation_street_ser "Female Street and Related Sales and Service Workers Occupation"
+label var f_occupation_refuse_work "Female Refuse Workers and other Elementary Workers Occupation"
+label var f_occupation_not_stated "Female Occupation Not Stated"
 
 save "female_occupation_SES", replace
 
@@ -1361,102 +1367,102 @@ restore
 *Total Data
 preserve
 
-drop AR
+*Data cleaning tasks
+drop AR 
 drop in 1/9
 keep if A=="Total" 
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
-rename A sex
-rename B occupation_total
-rename C occupation_a_forces
-rename D occupation_exec
-rename E occupation_admin_mange
-rename F occupation_prod_mange
-rename G occupation_hosp_mange
-rename H occupation_sci_prof
-rename I occupation_health_prof
-rename J occupation_teach_prof
-rename K occupation_busi_prof
-rename L occupation_info_prof
-rename M occupation_legal_prof
-rename N occupation_sci_a_prof
-rename O occupation_health_a_prof
-rename P occupation_busi_a_prof
-rename Q occupation_legal_a_prof
-rename R occupation_info_tech
-rename S occupation_gen_clerk
-rename T occupation_cust_clerk
-rename U occupation_num_clerk
-rename V occupation_other_clerk
-rename W occupation_per_work
-rename X occupation_sale_work
-rename Y occupation_care_work
-rename Z occupation_prot_work
-rename AA occupation_mar_agri
-rename AB occupation_mar_fores
-rename AC occupation_s_farm
-rename AD occupation_build_work
-rename AE occupation_metal_work
-rename AF occupation_handicraft
-rename AG occupation_elec_work
-rename AH occupation_food_process
-rename AI occupation_plant_assemble
-rename AJ occupation_drive_oper
-rename AK occupation_clean
-rename AL occupation_agri_labour
-rename AM occupation_mining_labour
-rename AN occupation_food_prep
-rename AO occupation_street_ser
-rename AP occupation_refuse_work
-rename AQ occupation_not_stated
+rename B t_occupation_total
+rename C t_occupation_a_forces
+rename D t_occupation_exec
+rename E t_occupation_admin_mange
+rename F t_occupation_prod_mange
+rename G t_occupation_hosp_mange
+rename H t_occupation_sci_prof
+rename I t_occupation_health_prof
+rename J t_occupation_teach_prof
+rename K t_occupation_busi_prof
+rename L t_occupation_info_prof
+rename M t_occupation_legal_prof
+rename N t_occupation_sci_a_prof
+rename O t_occupation_health_a_prof
+rename P t_occupation_busi_a_prof
+rename Q t_occupation_legal_a_prof
+rename R t_occupation_info_tech
+rename S t_occupation_gen_clerk
+rename T t_occupation_cust_clerk
+rename U t_occupation_num_clerk
+rename V t_occupation_other_clerk
+rename W t_occupation_per_work
+rename X t_occupation_sale_work
+rename Y t_occupation_care_work
+rename Z t_occupation_prot_work
+rename AA t_occupation_mar_agri
+rename AB t_occupation_mar_fores
+rename AC t_occupation_s_farm
+rename AD t_occupation_build_work
+rename AE t_occupation_metal_work
+rename AF t_occupation_handicraft
+rename AG t_occupation_elec_work
+rename AH t_occupation_food_process
+rename AI t_occupation_plant_assemble
+rename AJ t_occupation_drive_oper
+rename AK t_occupation_clean
+rename AL t_occupation_agri_labour
+rename AM t_occupation_mining_labour
+rename AN t_occupation_food_prep
+rename AO t_occupation_street_ser
+rename AP t_occupation_refuse_work
+rename AQ t_occupation_not_stated
 
 label var ED "Enumeration District Number"
-label var sex "Sex"
-label var occupation_total "Occupation Total"
-label var occupation_a_forces "Armed Forces Occupation"
-label var occupation_exec "Chief executives, senior officials and legislators Occupation"
-label var occupation_admin_mange "Administrative and Commerical Managers Occupation"
-label var occupation_prod_mange "Production and Specialised Services Managers Occupation"
-label var occupation_hosp_mange "Hospitality Retail and Other Services Managers Occupation"
-label var occupation_sci_prof "Science and Engineering Professionals Occupation"
-label var occupation_health_prof "Health Professionals Occupation"
-label var occupation_teach_prof "Teaching Professionals Occupation"
-label var occupation_busi_prof "Business and Administration Professionals Occupation"
-label var occupation_info_prof "Information and Communications Technology Professionals Occupation"
-label var occupation_legal_prof "Legal, Social and Cultural Professionals Occupation"
-label var occupation_sci_a_prof "Science and Engineering Associate Professionals Occupation"
-label var occupation_health_a_prof "Health Associate Professionals Occupation"
-label var occupation_busi_a_prof "Business and Administration Associate Professionals Occupation"
-label var occupation_legal_a_prof "Legal, Social, Cultural and Related Associate Professionals Occupation"
-label var occupation_info_tech "Information and Communications Technicians Occupation"
-label var occupation_gen_clerk "General and Keyboard Clerks Occupation"
-label var occupation_cust_clerk "Customer Services Clerks Occupation"
-label var occupation_num_clerk "Numerical and Material Recording Clerks Occupation"
-label var occupation_other_clerk "Other Clerical Support Workers Occupation"
-label var occupation_per_work "Personal Service Workers Occupation"
-label var occupation_sale_work "Sales Workers Occupation"
-label var occupation_care_work "Personal Care Workers Occupation"
-label var occupation_prot_work "Protective Services Workers Occupation"
-label var occupation_mar_agri "Market-oriented Skilled Agricultural Workers Occupation"
-label var occupation_mar_fores "Market-oriented Skilled Forestry, Fishery and Hunting Workers Occupation"
-label var occupation_s_farm "Subsistence Farmers, Fishers, Hunters and Gatherers Occupation"
-label var occupation_build_work "Building and related trades Workers Excluding electricians Occupation"
-label var occupation_metal_work "Metal Machinery and Related Trades Workers Occupation"
-label var occupation_handicraft "Handicraft and Printing Workers Occupation"
-label var occupation_elec_work "Electrical and Electronic Trades Workers Occupation"
-label var occupation_food_process "Food Processing, Wood Working, Garment and Other Craft and Related Trades Workers Occupation"
-label var occupation_plant_assemble "Stationary Plant and Machine Operators and Assemblers Occupation"
-label var occupation_drive_oper "Drivers and Mobile Plant Operators Occupation"
-label var occupation_clean "Cleaners and Helpers Occupation"
-label var occupation_agri_labour "Agricultural Forestry and Fishery Labourers Occupation"
-label var occupation_mining_labour "Labourers in Mining Construction Manufacturing and Transport Occupation"
-label var occupation_food_prep "Food Preparation Assistants"
-label var occupation_street_ser "Street and Related Sales and Service Workers Occupation"
-label var occupation_refuse_work "Refuse Workers and other Elementary Workers Occupation"
-label var occupation_not_stated "Occupation Not Stated"
+label var t_occupation_total "Total Occupation Total"
+label var t_occupation_a_forces "Total Armed Forces Occupation"
+label var t_occupation_exec "Total Chief executives, senior officials and legislators Occupation"
+label var t_occupation_admin_mange "Total Administrative and Commerical Managers Occupation"
+label var t_occupation_prod_mange "Total Production and Specialised Services Managers Occupation"
+label var t_occupation_hosp_mange "Total Hospitality Retail and Other Services Managers Occupation"
+label var t_occupation_sci_prof "Total Science and Engineering Professionals Occupation"
+label var t_occupation_health_prof "Total Health Professionals Occupation"
+label var t_occupation_teach_prof "Total Teaching Professionals Occupation"
+label var t_occupation_busi_prof "Total Business and Administration Professionals Occupation"
+label var t_occupation_info_prof "Total Information and Communications Technology Professionals Occupation"
+label var t_occupation_legal_prof "Total Legal, Social and Cultural Professionals Occupation"
+label var t_occupation_sci_a_prof "Total Science and Engineering Associate Professionals Occupation"
+label var t_occupation_health_a_prof "Total Health Associate Professionals Occupation"
+label var t_occupation_busi_a_prof "Total Business and Administration Associate Professionals Occupation"
+label var t_occupation_legal_a_prof "Total Legal, Social, Cultural and Related Associate Professionals Occupation"
+label var t_occupation_info_tech "Total Information and Communications Technicians Occupation"
+label var t_occupation_gen_clerk "Total General and Keyboard Clerks Occupation"
+label var t_occupation_cust_clerk "Total Customer Services Clerks Occupation"
+label var t_occupation_num_clerk "Total Numerical and Material Recording Clerks Occupation"
+label var t_occupation_other_clerk "Total Other Clerical Support Workers Occupation"
+label var t_occupation_per_work "Total Personal Service Workers Occupation"
+label var t_occupation_sale_work "Total Sales Workers Occupation"
+label var t_occupation_care_work "Total Personal Care Workers Occupation"
+label var t_occupation_prot_work "Total Protective Services Workers Occupation"
+label var t_occupation_mar_agri "Total Market-oriented Skilled Agricultural Workers Occupation"
+label var t_occupation_mar_fores "Total Market-oriented Skilled Forestry, Fishery and Hunting Workers Occupation"
+label var t_occupation_s_farm "Total Subsistence Farmers, Fishers, Hunters and Gatherers Occupation"
+label var t_occupation_build_work "Total Building and related trades Workers Excluding electricians Occupation"
+label var t_occupation_metal_work "Total Metal Machinery and Related Trades Workers Occupation"
+label var t_occupation_handicraft "Total Handicraft and Printing Workers Occupation"
+label var t_occupation_elec_work "Total Electrical and Electronic Trades Workers Occupation"
+label var t_occupation_food_process "Total Food Processing, Wood Working, Garment and Other Craft and Related Trades Workers Occupation"
+label var t_occupation_plant_assemble "Total Stationary Plant and Machine Operators and Assemblers Occupation"
+label var t_occupation_drive_oper "Total Drivers and Mobile Plant Operators Occupation"
+label var t_occupation_clean "Total Cleaners and Helpers Occupation"
+label var t_occupation_agri_labour "Total Agricultural Forestry and Fishery Labourers Occupation"
+label var t_occupation_mining_labour "Total Labourers in Mining Construction Manufacturing and Transport Occupation"
+label var t_occupation_food_prep "Total Food Preparation Assistants"
+label var t_occupation_street_ser "Total Street and Related Sales and Service Workers Occupation"
+label var t_occupation_refuse_work "Total Refuse Workers and other Elementary Workers Occupation"
+label var t_occupation_not_stated "Total Occupation Not Stated"
 
 save "total_occupation_SES", replace
 
