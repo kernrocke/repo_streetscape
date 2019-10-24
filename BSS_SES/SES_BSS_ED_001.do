@@ -20,7 +20,7 @@ set linesize 200
 
 *Setting working directory
 ** Dataset to encrypted location
-local datapath "X:/The University of the West Indies/DataGroup - repo_data/data_p145/BSS_SES"
+local datapath "/Volumes/Secomba/kernrocke/Boxcryptor/DataGroup - repo_data/data_p145"
 ** Logfiles to unencrypted location
 local logpath X:/OneDrive - The University of the West Indies/repo_datagroup/repo_p145
 
@@ -46,7 +46,7 @@ SES data provided by BSS include the following
 */
 
 *Load in excel data (Ethnicity Origin)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Ethnic Origin") allstring clear
+import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("Ethnic Origin") allstring clear
 
 //////	Ethnicity Origin	//////////
 
@@ -83,7 +83,7 @@ label var m_race_mixed "Male Mixed"
 label var m_race_other "Male Ethnicity Other"
 label var m_race_not_stated "Male Ethnicity not stated"
 
-save "male_race_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/male_race_SES", replace
 
 restore
 
@@ -122,7 +122,7 @@ label var f_race_mixed "Female Mixed"
 label var f_race_other "Female Ethnicity Other"
 label var f_race_not_stated "Female Ethnicity not stated"
 
-save "female_race_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/female_race_SES", replace
 
 restore
 ********************************************************************************
@@ -160,14 +160,14 @@ label var t_race_mixed "Total Mixed"
 label var t_race_other "Total Ethnicity Other"
 label var t_race_not_stated "Total Ethnicity not stated"
 
-save "total_race_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/total_race_SES", replace
 
 restore
 ********************************************************************************
 ********************************************************************************
 
 *Load in excel data (Age)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Age") allstring clear
+import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("Age") allstring clear
 
 /////	Age	//////
 
@@ -212,7 +212,7 @@ label var m_age_80_89 "Male 80-89 years"
 label var m_age_90_99 "Male 90-99 years"
 label var m_age_100_over "Male 100 years and over"
 
-save "male_age_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/male_age_SES", replace
 
 restore
 ********************************************************************************
@@ -258,7 +258,7 @@ label var f_age_80_89 "Female 80-89 years"
 label var f_age_90_99 "Female 90-99 years"
 label var f_age_100_over "Female 100 years and over"
 
-save "female_age_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/female_age_SES", replace
 
 restore
 ********************************************************************************
@@ -304,14 +304,14 @@ label var t_age_80_89 "Total 80-89 years"
 label var t_age_90_99 "Total 90-99 years"
 label var t_age_100_over "Total 100 years and over"
 
-save "total_age_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/total_age_SES", replace
 
 restore
 ********************************************************************************
 ********************************************************************************
 
 *Load in excel data (Household Size)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Household Size") allstring clear
+import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("Household Size") allstring clear
 
 /////	Household Size	//////
 
@@ -356,14 +356,14 @@ label var hsize_11Person "Household size 11 persons"
 label var hsize_12Person "Household size 12 persons"
 label var hsize_13Person "Household size 13 persons or more"
 
-save "household_size_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/household_size_SES", replace
 
 restore
 ********************************************************************************
 ********************************************************************************
 
 *Load in excel data (House Tenure)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("House Tenure") allstring clear
+import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("House Tenure") allstring clear
 
 /////	House Tenure	//////
 
@@ -393,14 +393,14 @@ label var htenure_other "House Tenure Other"
 label var htenure_no_state "House Tenure Not Stated"
 
 
-save "house_tenure_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/house_tenure_SES", replace
 
 restore
 ********************************************************************************
 ********************************************************************************
 
 *Load in excel data (Single Mothers)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Single Mothers") allstring clear
+import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("Single Mothers") allstring clear
 
 /////	Single Mother households and total live births	//////
 
@@ -441,14 +441,14 @@ label var smother_9 "9 liveborn"
 label var smother_10 "10+ liveborn"
 label var smother_not_state "liveborn- Not Stated"
 
-save "single_mother_liveborn_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/single_mother_liveborn_SES", replace
 
 restore
 ********************************************************************************
 ********************************************************************************
 
 *Load in excel data (Households and Relationship to Head of household)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Relationship to head") allstring clear
+import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("Relationship to head") allstring clear
 
 /////	Households and Relationship to Head of household	//////
 
@@ -486,14 +486,14 @@ label var rth_vistor "Visitor"
 label var rth_non_relative "Other non-relative"
 label var rth_not_stated "Relationship to head- Not stated"
 
-save "relationship_to_head_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/relationship_to_head_SES", replace
 
 restore
 ********************************************************************************
 ********************************************************************************
 
 *Load in excel data (Education)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Education") allstring clear
+import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("Education") allstring clear
 
 //////	Education	//////////
 
@@ -532,7 +532,7 @@ label var m_education_other "Male Education- Other"
 label var m_education_none "Male Education None"
 label var m_education_not_stated "Male Education not stated"
 
-save "male_education_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/male_education_SES", replace
 
 restore
 
@@ -573,7 +573,7 @@ label var f_education_other "Female Education- Other"
 label var f_education_none "Female Education None"
 label var f_education_not_stated "Female Education not stated"
 
-save "female_education_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/female_education_SES", replace
 
 restore
 ********************************************************************************
@@ -613,14 +613,14 @@ label var t_education_other "Total Education- Other"
 label var t_education_none "Total Education None"
 label var t_education_not_stated "Total Education not stated"
 
-save "total_education_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/total_education_SES", replace
 
 restore
 ********************************************************************************
 ********************************************************************************
 
 *Load in excel data (Yearly Pay)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Yearly Pay") allstring clear
+import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("Yearly Pay") allstring clear
 
 //////	Yearly Pay	//////////
 
@@ -657,7 +657,7 @@ label var m_income_200_over "Male $200000 and over"
 label var m_income_other "Male Income other"
 label var m_income_not_stated "Male Income not stated"
 
-save "male_income_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/male_income_SES", replace
 
 restore
 
@@ -696,7 +696,7 @@ label var f_income_200_over "Female $200000 and over"
 label var f_income_other "Female Income other"
 label var f_income_not_stated "Female Income not stated"
 
-save "female_income_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/female_income_SES", replace
 
 restore
 
@@ -736,14 +736,14 @@ label var t_income_200_over "Total $200000 and over"
 label var t_income_other "Total Income other"
 label var t_income_not_stated "Total Income not stated"
 
-save "total_income_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/total_income_SES", replace
 
 restore
 ********************************************************************************
 ********************************************************************************
 
 *Load in excel data (Main Activity)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Main Activity") allstring clear
+import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("Main Activity") allstring clear
 
 //////	Main Activity	//////////
 
@@ -782,7 +782,7 @@ label var m_mactivity_incapacitated "Male Main Activity Incapacitated"
 label var m_mactivity_other "Male Main Activity Other"
 label var m_mactivity_not_stated "Male Main Activity Not Stated"
 
-save "male_mactivity_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/male_mactivity_SES", replace
 
 restore
 
@@ -823,7 +823,7 @@ label var f_mactivity_incapacitated "Female Main Activity Incapacitated"
 label var f_mactivity_other "Female Main Activity Other"
 label var f_mactivity_not_stated "Female Main Activity Not Stated"
 
-save "female_mactivity_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/female_mactivity_SES", replace
 
 restore
 
@@ -864,14 +864,14 @@ label var t_mactivity_incapacitated "Total Main Activity Incapacitated"
 label var t_mactivity_other "Total Main Activity Other"
 label var t_mactivity_not_stated "Total Main Activity Not Stated"
 
-save "total_mactivity_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/total_mactivity_SES", replace
 
 restore
 ********************************************************************************
 ********************************************************************************
 
 *Load in excel data (Work Activity)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Work Activity") allstring clear
+import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("Work Activity") allstring clear
 
 //////	Work Activity	//////////
 
@@ -911,7 +911,7 @@ label var m_wactivity_no_work "Male Did not Work Work Activity"
 label var m_wactivity_other_2 "Male Other 2 Work Activity"
 label var m_wactivity_not_stated "Male Not stated Work Activity"
 
-save "male_wactivity_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/male_wactivity_SES", replace
 
 restore
 
@@ -954,7 +954,7 @@ label var f_wactivity_no_work "Female Did not Work Work Activity"
 label var f_wactivity_other_2 "Female Other 2 Work Activity"
 label var f_wactivity_not_stated "Female Not stated Work Activity"
 
-save "female_wactivity_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/female_wactivity_SES", replace
 
 restore
 
@@ -997,14 +997,14 @@ label var t_wactivity_no_work "Total Did not Work Work Activity"
 label var t_wactivity_other_2 "Total Other 2 Work Activity"
 label var t_wactivity_not_stated "Total Not stated Work Activity"
 
-save "total_wactivity_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/total_wactivity_SES", replace
 
 restore
 ********************************************************************************
 ********************************************************************************
 
 *Load in excel data (Household Size)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Household Size") allstring clear
+import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("Household Size") allstring clear
 
 /////	Household Size	//////
 
@@ -1049,14 +1049,14 @@ label var hsize_11Person "Household size 11 persons"
 label var hsize_12Person "Household size 12 persons"
 label var hsize_13Person "Household size 13 persons or more"
 
-save "household_size_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/household_size_SES", replace
 
 restore
 ********************************************************************************
 ********************************************************************************
 
 *Load in excel data (Liveborn children)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Liveborn children") allstring clear
+import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("Liveborn children") allstring clear
 
 /////	Women 15-64 years and Total Liveborn Children	//////
 
@@ -1098,14 +1098,14 @@ label var live_10 "10 Liveborn Children"
 label var live_not_stated "Liveborn Children Not"
 
 
-save "liveborn_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/liveborn_SES", replace
 
 restore
 ********************************************************************************
 ********************************************************************************
 
 *Load in excel data (Crime)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Crime") allstring clear
+import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("Crime") allstring clear
 
 /////	Crime	//////
 
@@ -1142,14 +1142,14 @@ label var crime_wound "Wound Crime"
 label var crime_larceny "Larceny Crime"
 label var crime_not_stated "Crime Not Stated"
 
-save "crime_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/crime_SES", replace
 
 restore
 ********************************************************************************
 ********************************************************************************
 
 *Load in excel data (Occupation)
-import excel "/Users/kernrocke/The University of the West Indies/DataGroup - StreetScapes/SES Information/SES_Barbados_Statistical_Service_Census_2010_test.xlsx", sheet("Occupation") allstring clear
+import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("Occupation") allstring clear
 
 //////	Occupation	//////////
 
@@ -1253,7 +1253,7 @@ label var m_occupation_street_ser "Male Street and Related Sales and Service Wor
 label var m_occupation_refuse_work "Male Refuse Workers and other Elementary Workers Occupation"
 label var m_occupation_not_stated "Male Occupation Not Stated"
 
-save "male_occupation_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/male_occupation_SES", replace
 
 restore
 
@@ -1359,7 +1359,7 @@ label var f_occupation_street_ser "Female Street and Related Sales and Service W
 label var f_occupation_refuse_work "Female Refuse Workers and other Elementary Workers Occupation"
 label var f_occupation_not_stated "Female Occupation Not Stated"
 
-save "female_occupation_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/female_occupation_SES", replace
 
 restore
 ********************************************************************************
@@ -1464,7 +1464,7 @@ label var t_occupation_street_ser "Total Street and Related Sales and Service Wo
 label var t_occupation_refuse_work "Total Refuse Workers and other Elementary Workers Occupation"
 label var t_occupation_not_stated "Total Occupation Not Stated"
 
-save "total_occupation_SES", replace
+save "`datapath'/version01/1-input/BSS_SES/total_occupation_SES", replace
 
 restore
 ********************************************************************************
