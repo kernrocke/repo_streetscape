@@ -20,7 +20,7 @@ set linesize 200
 
 *Setting working directory
 ** Dataset to encrypted location
-local datapath "X:/The University of the West Indies/DataGroup - repo_data/data_p145/BSS_SES"
+local datapath "/Volumes/Secomba/kernrocke/Boxcryptor/DataGroup - repo_data/data_p145"
 ** Logfiles to unencrypted location
 local logpath X:/OneDrive - The University of the West Indies/repo_datagroup/repo_p145
 
@@ -43,60 +43,49 @@ Sub tasks:
 /////	MALE 	////	
 
 *Load in 1st dataset
-use "male_race_SES", clear
+use "`datapath'/version01/1-input/BSS_SES/male_race_SES", clear
 
 *Merge gender specific datasets
 foreach x in age education income mactivity wactivity occupation {
-merge 1:1 ED using "male_`x'_SES.dta", nogenerate
+merge 1:1 ED using "`datapath'/version01/1-input/BSS_SES/male_`x'_SES.dta", nogenerate
                     }
-
-*Merge non-gender specific datasets
-foreach x in household_size house_tenure single_mother_liveborn ///
-			relationship_to_head household_size liveborn crime {
-merge 1:1 ED using "`x'_SES.dta", nogenerate
-                    }	
 drop in 584	
 
 *Save dataset
-save "male_SES", replace
+save "`datapath'/version01/2-working/BSS_SES/male_SES", replace
 	
 ********************************************************************************
 	
 /////	FEMALE 	////	
 	
 *Load in 1st dataset
-use "female_race_SES", clear
+use "`datapath'/version01/1-input/BSS_SES/female_race_SES", clear
 
 *Merge gender specific datasets
 foreach x in age education income mactivity wactivity occupation {
-merge 1:1 ED using "female_`x'_SES.dta", nogenerate
+merge 1:1 ED using "`datapath'/version01/1-input/BSS_SES/female_`x'_SES.dta", nogenerate
                     }
 
-*Merge non-gender specific datasets
-foreach x in household_size house_tenure single_mother_liveborn ///
-			relationship_to_head household_size liveborn crime {
-merge 1:1 ED using "`x'_SES.dta", nogenerate
-                    }	
 drop in 584	
 
 *Save dataset
-save "female_SES", replace
+save "`datapath'/version01/2-working/BSS_SES/female_SES", replace
 
 ********************************************************************************
 
 /////	TOTAL 	////	
 	
 *Load in 1st dataset
-use "total_race_SES", clear
+use "`datapath'/version01/1-input/BSS_SES/total_race_SES", clear
 
-*Merge gender specific datasets
+*Merge total specific datasets
 foreach x in age education income mactivity wactivity occupation {
-merge 1:1 ED using "total_`x'_SES.dta", nogenerate
+merge 1:1 ED using "`datapath'/version01/1-input/BSS_SES/total_`x'_SES.dta", nogenerate
                     }
 drop in 584	
 
 *Save dataset
-save "total_SES", replace
+save "`datapath'/version01/2-working/BSS_SES/total_SES", replace
 
 ********************************************************************************
 ********************************************************************************
@@ -104,19 +93,19 @@ save "total_SES", replace
 ////// MERGING ALL DATA  ///////
 
 *Load in Total SES dataset
-use "total_SES", clear
+use "`datapath'/version01/2-working/BSS_SES/total_SES", clear
 
 *Merge sex-specific datasets
 foreach in male female {
-merge 1:1 ED using "`x'_SES,dta", nogenerate
+merge 1:1 ED using "`datapath'/version01/2-working/BSS_SES/`x'_SES,dta", nogenerate
 }
 
 *Merge non-gender specific datasets
 foreach x in household_size house_tenure single_mother_liveborn ///
 			relationship_to_head household_size liveborn crime {
-merge 1:1 ED using "`x'_SES.dta", nogenerate
+merge 1:1 ED using "`datapath'/version01/1-input/BSS_SES/`x'_SES.dta", nogenerate
                     }	
 label data "SES by Ennumeration Districts - Barbabdos Statistical Service"
 
 *Save dataset
-save "BSS_SES", replace
+save "`datapath'/version01/2-working/BSS_SES/BSS_SES", replace
