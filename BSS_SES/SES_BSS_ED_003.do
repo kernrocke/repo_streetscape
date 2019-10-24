@@ -24,6 +24,23 @@ local datapath "X:/The University of the West Indies/DataGroup - repo_data/data_
 ** Logfiles to unencrypted location
 local logpath X:/OneDrive - The University of the West Indies/repo_datagroup/repo_p145
 
+/*
+This algorithm will attempt to utilize all possible combinations of SES variables derived from the SES Census 2010 data.
+
+Possible SES variables needed for the computation of the SES index
+
+Unemployed
+<Seondary education
+Management occupations (Male/Female)
+<$49999 Yearly income (Male/Female)
+Female headed households 
+Non blacks
+
+*/
+
+
+
+
 *Load in dataset
 use "BSS_SES", clear
 
