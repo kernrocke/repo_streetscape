@@ -7,7 +7,7 @@ cls
 **  Project:      	Macroscale Walkability- PhD
 **  Analyst:		Kern Rocke
 **	Date Created:	21/10/2019
-**	Date Modified: 	21/10/2019
+**	Date Modified: 	24/10/2019
 **  Algorithm Task: Statistical Analysis Plan
 
 
@@ -39,6 +39,8 @@ Results from theses analyses well then be categorized into declies whereby decil
 This will then be visualized on ED maps for Barbados and study sites for ECHORN. 
 
 The raw estimates which were given will be converted to percentages based on the population size for the respective ennumeration district. 
+
+The literature has suggested that there is no defined listing of variables which should be used for the computation of SES index using census data.
 
 Measures for SES which will be considered are:
 1) Income
