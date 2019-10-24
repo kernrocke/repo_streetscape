@@ -117,12 +117,6 @@ foreach x in household_size house_tenure single_mother_liveborn ///
 			relationship_to_head household_size liveborn crime {
 merge 1:1 ED using "`x'_SES.dta", nogenerate
                     }	
-*destring sex variable
-encode sex, gen(sex1) label(Sex)
-drop sex
-rename sex1 sex
-order ED sex
-
 label data "SES by Ennumeration Districts - Barbabdos Statistical Service"
 
 *Save dataset
