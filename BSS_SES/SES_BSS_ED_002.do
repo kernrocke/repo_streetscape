@@ -94,12 +94,6 @@ use "total_race_SES", clear
 foreach x in age education income mactivity wactivity occupation {
 merge 1:1 ED using "total_`x'_SES.dta", nogenerate
                     }
-
-*Merge non-gender specific datasets
-foreach x in household_size house_tenure single_mother_liveborn ///
-			relationship_to_head household_size liveborn crime {
-merge 1:1 ED using "`x'_SES.dta", nogenerate
-                    }	
 drop in 584	
 
 *Save dataset
@@ -110,13 +104,19 @@ save "total_SES", replace
 
 ////// MERGING ALL DATA  ///////
 
-*Load in Male data
-use "male_SES", clear
+*Load in Total SES dataset
+use "total_SES", clear
 
-*Append using female and total data
-append using "female_SES"
-append using "total_SES"
+*Merge sex-specific datasets
+foreach in male female {
+merge 1:1 ED using "`x'_SES,dta", nogenerate
+}
 
+*Merge non-gender specific datasets
+foreach x in household_size house_tenure single_mother_liveborn ///
+			relationship_to_head household_size liveborn crime {
+merge 1:1 ED using "`x'_SES.dta", nogenerate
+                    }	
 *destring sex variable
 encode sex, gen(sex1) label(Sex)
 drop sex
