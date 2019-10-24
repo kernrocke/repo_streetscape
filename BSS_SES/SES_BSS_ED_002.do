@@ -34,8 +34,7 @@ Sub tasks:
 2) Merge non-sex specific datasets to sex specific datasets
 
 3) Consider combining all datasets into one final dataset
- Note: Encode all string variables to categorized numeric (in particular: sex)
-
+ 
 */
 
 
