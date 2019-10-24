@@ -23,3 +23,7 @@ set linesize 200
 local datapath "X:/The University of the West Indies/DataGroup - repo_data/data_p145/BSS_SES"
 ** Logfiles to unencrypted location
 local logpath X:/OneDrive - The University of the West Indies/repo_datagroup/repo_p145
+
+*Load in dataset
+use "BSS_SES", clear
+
