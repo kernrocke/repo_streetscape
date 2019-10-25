@@ -98,9 +98,10 @@ merge 1:1 ED using "`datapath'/version01/2-working/BSS_SES/`x'_SES", nogenerate
 foreach x in household_size house_tenure single_mother_liveborn ///
 			relationship_to_head household_size liveborn crime {
 merge 1:1 ED using "`datapath'/version01/1-input/BSS_SES/`x'_SES.dta", nogenerate
+                    }	
 
 drop in 584
-                    }	
+
 label data "SES by Ennumeration Districts - Barbabdos Statistical Service"
 
 *Save dataset
