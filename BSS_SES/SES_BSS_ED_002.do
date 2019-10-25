@@ -90,8 +90,8 @@ save "`datapath'/version01/2-working/BSS_SES/total_SES", replace
 use "`datapath'/version01/2-working/BSS_SES/total_SES", clear
 
 *Merge sex-specific datasets
-foreach in male female {
-merge 1:1 ED using "`datapath'/version01/2-working/BSS_SES/`x'_SES,dta", nogenerate
+foreach x in male female {
+merge 1:1 ED using "`datapath'/version01/2-working/BSS_SES/`x'_SES", nogenerate
 }
 
 *Merge non-gender specific datasets
