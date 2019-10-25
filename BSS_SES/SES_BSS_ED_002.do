@@ -2,6 +2,8 @@ clear
 capture log close
 cls
 
+//Note: This algorithm can only be run after SES_BSS_ED_001
+
 **  GENERAL DO-FILE COMMENTS
 **  Program:		SES_BSS_ED_002.do
 **  Project:      	Macroscale Walkability- PhD
@@ -105,4 +107,4 @@ drop in 584
 label data "SES by Ennumeration Districts - Barbabdos Statistical Service"
 
 *Save dataset
-save "`datapath'/version01/2-working/BSS_SES/BSS_SES", replace
+save "`datapath'/version01/2-working/BSS_SES/BSS_SES_001", replace

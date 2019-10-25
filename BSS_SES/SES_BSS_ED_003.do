@@ -2,6 +2,8 @@ clear
 capture log close
 cls
 
+//Note: This algorithm can only be run after SES_BSS_ED_002
+
 **  GENERAL DO-FILE COMMENTS
 **  Program:		SES_BSS_ED_002.do
 **  Project:      	Macroscale Walkability- PhD
@@ -41,7 +43,7 @@ Non blacks
 
 
 *Load in dataset
-use "`datapath'/version01/2-working/BSS_SES/BSS_SES", clear
+use "`datapath'/version01/2-working/BSS_SES/BSS_SES_001", clear
 
 *********************************************************************
 *Convert Ethnicity variables to percentages
@@ -219,3 +221,6 @@ label var per_t_occupation_`x' "Total Percentage `x' Occupation"
              }
                                                  
 *********************************************************************
+
+*Save dataset
+save "`datapath'/version01/2-working/BSS_SES/BSS_SES_002", replace
