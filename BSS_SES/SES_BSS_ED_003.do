@@ -40,7 +40,18 @@ Non blacks
 
 
 
-
 *Load in dataset
 use "`datapath'/version01/2-working/BSS_SES/BSS_SES", clear
 
+*Covert Ethnicity variables to percentages
+
+foreach x in black white oriental east_indian middle_eastern ///
+            mixed other {
+gen per_m_race_`x' = (m_race_`x' / m_race_total)*100
+gen per_f_race_`x' = (f_race_`x' / f_race_total)*100
+gen per_t_race_`x' = (t_race_`x' / t_race_total)*100
+
+label var per_m_race_`x' "Male Percentage `x'"
+label var per_f_race_`x' "Female Percentage `x'"
+label var per_m_race_`x' "Male Percentage `x'"
+            }
