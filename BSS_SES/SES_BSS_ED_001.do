@@ -884,6 +884,7 @@ keep if A=="Male"
 destring, replace
 egen ED = seq()
 order ED
+drop A
 
 *Renaming and labelling variabels
 rename B m_wactivity_total
