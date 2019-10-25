@@ -49,8 +49,6 @@ use "`datapath'/version01/1-input/BSS_SES/male_race_SES", clear
 foreach x in age education income mactivity wactivity occupation {
 merge 1:1 ED using "`datapath'/version01/1-input/BSS_SES/male_`x'_SES.dta", nogenerate
                     }
-drop in 584	
-
 *Save dataset
 save "`datapath'/version01/2-working/BSS_SES/male_SES", replace
 	
@@ -65,9 +63,6 @@ use "`datapath'/version01/1-input/BSS_SES/female_race_SES", clear
 foreach x in age education income mactivity wactivity occupation {
 merge 1:1 ED using "`datapath'/version01/1-input/BSS_SES/female_`x'_SES.dta", nogenerate
                     }
-
-drop in 584	
-
 *Save dataset
 save "`datapath'/version01/2-working/BSS_SES/female_SES", replace
 
@@ -82,7 +77,6 @@ use "`datapath'/version01/1-input/BSS_SES/total_race_SES", clear
 foreach x in age education income mactivity wactivity occupation {
 merge 1:1 ED using "`datapath'/version01/1-input/BSS_SES/total_`x'_SES.dta", nogenerate
                     }
-drop in 584	
 
 *Save dataset
 save "`datapath'/version01/2-working/BSS_SES/total_SES", replace
