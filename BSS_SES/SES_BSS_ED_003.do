@@ -199,7 +199,7 @@ label var per_crime_`x' "Percentage `x' Crime"
 *********************************************************************
 *Convert Occupation variables to percentages
 
-foreach x in a_forces exec admin_manage prod_manage hosp_manage   ///
+foreach x in a_forces exec admin_mange prod_mange hosp_mange   ///
             sci_prof health_prof teach_prof busi_prof info_prof ///
             legal_prof sci_a_prof health_a_prof busi_a_prof ///
             legal_a_prof info_tech gen_clerk cust_clerk num_clerk ///
