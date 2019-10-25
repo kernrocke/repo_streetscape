@@ -889,7 +889,7 @@ drop A
 *Renaming and labelling variabels
 rename B m_wactivity_total
 rename C m_wactivity_government
-rename D m_wactivity_private_enterprise
+rename D m_wactivity_private_enter
 rename E m_wactivity_private_house
 rename F m_wactivity_other
 rename G m_wactivity_unpaid_work
@@ -902,7 +902,7 @@ rename L m_wactivity_not_stated
 label var ED "Enumeration District Number"
 label var m_wactivity_total "Male Work Activity Total"
 label var m_wactivity_government "Male Government Work Activity"
-label var m_wactivity_private_enterprise "Male Private Enterprise Work Activity"
+label var m_wactivity_private_enter "Male Private Enterprise Work Activity"
 label var m_wactivity_private_house "Male Private household Work Activity"
 label var m_wactivity_other "Male Other Work Activity"
 label var m_wactivity_unpaid_work "Male Unpaid Worker Work Activity"
@@ -932,7 +932,7 @@ drop A
 *Renaming and labelling variabels
 rename B f_wactivity_total
 rename C f_wactivity_government
-rename D f_wactivity_private_enterprise
+rename D f_wactivity_private_enter
 rename E f_wactivity_private_house
 rename F f_wactivity_other
 rename G f_wactivity_unpaid_work
@@ -945,7 +945,7 @@ rename L f_wactivity_not_stated
 label var ED "Enumeration District Number"
 label var f_wactivity_total "Female Work Activity Total"
 label var f_wactivity_government "Female Government Work Activity"
-label var f_wactivity_private_enterprise "Female Private Enterprise Work Activity"
+label var f_wactivity_private_enter "Female Private Enterprise Work Activity"
 label var f_wactivity_private_house "Female Private household Work Activity"
 label var f_wactivity_other "Female Other Work Activity"
 label var f_wactivity_unpaid_work "Female Unpaid Worker Work Activity"
@@ -975,7 +975,7 @@ drop A
 *Renaming and labelling variabels
 rename B t_wactivity_total
 rename C t_wactivity_government
-rename D t_wactivity_private_enterprise
+rename D t_wactivity_private_enter
 rename E t_wactivity_private_house
 rename F t_wactivity_other
 rename G t_wactivity_unpaid_work
@@ -988,7 +988,7 @@ rename L t_wactivity_not_stated
 label var ED "Enumeration District Number"
 label var t_wactivity_total "Total Work Activity Total"
 label var t_wactivity_government "Total Government Work Activity"
-label var t_wactivity_private_enterprise "Total Private Enterprise Work Activity"
+label var t_wactivity_private_enter "Total Private Enterprise Work Activity"
 label var t_wactivity_private_house "Total Private household Work Activity"
 label var t_wactivity_other "Total Other Work Activity"
 label var t_wactivity_unpaid_work "Total Unpaid Worker Work Activity"

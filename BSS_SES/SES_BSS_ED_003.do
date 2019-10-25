@@ -162,7 +162,7 @@ label var per_t_mactivity_`x' "Total Percentage Main Activity `x'"
 *********************************************************************
 *Convert Work Activity variables to percentages
 
-foreach x in government private_enterprise private_house other   ///
+foreach x in government private_enter private_house other   ///
             unpaid_work paid_help unpaid_help no_work other_2 {
                 
 gen per_m_wactivity_`x' = (m_wactivity_`x' / m_wactivity_total)*100
