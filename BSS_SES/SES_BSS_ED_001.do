@@ -1004,58 +1004,6 @@ restore
 ********************************************************************************
 ********************************************************************************
 
-*Load in excel data (Household Size)
-import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("Household Size") allstring clear
-
-/////	Household Size	//////
-
-preserve
-
-*Data cleaning tasks
-drop in 1/4
-destring, replace
-
-*Renaming and labelling variabels
-rename A ED
-rename B hsize_total
-rename C hsize_mean
-rename D hsize_1Person
-rename E hsize_2Person
-rename F hsize_3Person
-rename G hsize_4Person
-rename H hsize_5Person
-rename I hsize_6Person
-rename J hsize_7Person
-rename K hsize_8Person
-rename L hsize_9Person
-rename M hsize_10Person
-rename N hsize_11Person
-rename O hsize_12Person
-rename P hsize_13Person
-
-label var ED "Enumeration District Number"
-label var hsize_total "Household size Total"
-label var hsize_mean "Household size Mean"
-label var hsize_1Person "Household size 1 person"
-label var hsize_2Person "Household size 2 persons"
-label var hsize_3Person "Household size 3 persons"
-label var hsize_4Person "Household size 4 persons"
-label var hsize_5Person "Household size 5 persons"
-label var hsize_6Person "Household size 6 persons"
-label var hsize_7Person "Household size 7 persons"
-label var hsize_8Person "Household size 8 persons"
-label var hsize_9Person "Household size 9 persons"
-label var hsize_10Person "Household size 10 persons"
-label var hsize_11Person "Household size 11 persons"
-label var hsize_12Person "Household size 12 persons"
-label var hsize_13Person "Household size 13 persons or more"
-
-save "`datapath'/version01/1-input/BSS_SES/household_size_SES", replace
-
-restore
-********************************************************************************
-********************************************************************************
-
 *Load in excel data (Liveborn children)
 import excel "`datapath'/version01/1-input/BSS_SES/SES_Barbados_Statistical_Service_Census_2010.xlsx", sheet("Liveborn children") allstring clear
 

@@ -7,7 +7,7 @@ cls
 **  Project:      	Macroscale Walkability- PhD
 **  Analyst:		Kern Rocke
 **	Date Created:	21/10/2019
-**	Date Modified: 	24/10/2019
+**	Date Modified: 	25/10/2019
 **  Algorithm Task: Statistical Analysis Plan
 
 
@@ -71,13 +71,22 @@ An idea for future work could be examining the Socioeconmic environment spatiall
     This will be used to merge all sex-specific datasets into one location
     Creation of final dataset to be used for analysis
 
-3) Data Analysis (Part 1)
+3) Data manipulation 
     Algorithim : SES_BSS_ED_003
     This will be used to generarte estimates for each SES catgory by ED to be used for PCA
     Creation of analysis dataset to be used for part 2
 
-4) Data Analysis (Part 2)
+4) Data Analysis 
     Algorithim : SES_BSS_ED_004
     This will be used to construct SES composite and social depreviation scores by ED using principal compoennt analysis (PCA)
     Creation of analysis dataset to be used for geospatial mapping of Barbados
+
+Note:
+Plot correlation coefficents (yaxis) and number of combinations (refer to Ian's dietary patterns analysis)
+This will be a scatter plot
+
+*Note:
+Consider in addition analysis using "Lasso (availabile in STATA v16)"
+This can be used to compare to the results obtained from PCA analysis
+
 */
