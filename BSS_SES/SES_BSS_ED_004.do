@@ -91,3 +91,4 @@ gen ind = _n
     #delimit cr
 restore
 
+*
