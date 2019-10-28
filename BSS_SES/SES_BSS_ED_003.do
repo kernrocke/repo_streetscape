@@ -18,7 +18,7 @@ version 13
 clear all
 macro drop _all
 set more 1
-set linesize 200
+set linesize 80
 
 *Setting working directory
 ** Dataset to encrypted location
