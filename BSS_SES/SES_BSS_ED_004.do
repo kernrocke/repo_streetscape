@@ -9,7 +9,7 @@ cls
 **  Project:      	Macroscale Walkability- PhD
 **  Analyst:		Kern Rocke
 **	Date Created:	28/10/2019
-**	Date Modified: 	28/10/2019
+**	Date Modified: 	29/10/2019
 **  Algorithm Task: Correlations and Inital PCA Analysis
 
 
@@ -35,7 +35,7 @@ local logpath X:/OneDrive - The University of the West Indies/repo_datagroup/rep
 use "`datapath'/version01/2-working/BSS_SES/BSS_SES_002", clear
 
 **Initalize macros
-global xlist per_t_occupation_refuse_work t_age_median 		
+global xlist per_m_race_black - per_t_occupation_refuse_work hsize_mean f_income_median f_age_median m_income_median m_age_median t_age_median t_income_median	
 global ED
 
 ** Describe SES categories
@@ -66,12 +66,12 @@ gen ind = _n
 			graphregion(color(gs16)) 
             ysize(5) xsize(10)
 
-			xlab(0(100)400 , labs(3) tlc(gs0) labc(gs0) nogrid glc(gs16))
+			xlab(0(5000)52000 , labs(3) tlc(gs0) labc(gs0) nogrid glc(gs16))
 			xscale(fill lc(gs0))
 			xtitle("Correlations", size(3) color(gs0) margin(l=2 r=2 t=5 b=2))
-			xmtick(0(50)450, tlc(gs0))
+			xmtick(0(5000)52050, tlc(gs0))
 
-			ylab(-0.4(0.1)0.5
+			ylab(-1.0(0.1)1.0
 			,
 			valuelabel labc(gs0) labs(3) tstyle(major_notick) nogrid glc(gs16) angle(0) format(%9.2f))
 			yscale(noline lw(vthin) )
