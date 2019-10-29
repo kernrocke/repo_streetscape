@@ -35,7 +35,9 @@ local logpath X:/OneDrive - The University of the West Indies/repo_datagroup/rep
 use "`datapath'/version01/2-working/BSS_SES/BSS_SES_002", clear
 
 **Initalize macros
-global xlist per_t_occupation_refuse_work t_age_median 		
+global xlist per_m_race_black - per_t_occupation_refuse_work ////
+			hsize_mean f_income_median f_age_median m_income_median ///
+			m_age_median t_age_median t_income_median	
 global ED
 
 ** Describe SES categories
