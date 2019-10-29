@@ -135,4 +135,3 @@ label value ses_cat ses_cat
 **Tabulate SES by ED and parishes
 tab ses_cat ED
 tab ses_cat parish
->>>>>>> 57459abd692ca6287b1e7404d6a38dec35e71f42
