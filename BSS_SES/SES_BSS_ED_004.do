@@ -35,7 +35,13 @@ local logpath X:/OneDrive - The University of the West Indies/repo_datagroup/rep
 use "`datapath'/version01/2-working/BSS_SES/BSS_SES_002", clear
 
 **Initalize macros
+<<<<<<< HEAD
 global xlist per_m_race_black - per_t_occupation_refuse_work hsize_mean f_income_median f_age_median m_income_median m_age_median t_age_median t_income_median	
+=======
+global xlist per_m_race_black - per_t_occupation_refuse_work ////
+			hsize_mean f_income_median f_age_median m_income_median ///
+			m_age_median t_age_median t_income_median	
+>>>>>>> 57459abd692ca6287b1e7404d6a38dec35e71f42
 global ED
 
 ** Describe SES categories
@@ -91,4 +97,42 @@ gen ind = _n
     #delimit cr
 restore
 
+<<<<<<< HEAD
 *
+=======
+*Inital PCA analysis
+paran $xlist
+
+pca $xlist
+
+*Orthogonal rotation
+rotate, varimax blanks(0.3)
+
+*Oblique rotation
+rotate, promax blanks(0.3)
+
+**Adding loadings estimates to the existing dataset
+estat loadings
+predict ses_score
+
+**KMO measure for sampling adequacy
+**Note: values 0.70 and higher are desireable 
+estat kmo 
+
+**Summary of ses index scores
+sum ses_score
+
+**Categorize SES index scores into deciles
+xtile ses_dec, nq(10)
+
+**Categorize deciles into high and low SES
+gen ses_cat = ses_dec
+recode ses_cat (1/4=3) (5/6=2) (7/10=1)
+label var ses_cat "Socioeconomic Index Categories"
+label define ses_cat 3"High" 1"Low" 2"Medium"
+label value ses_cat ses_cat
+
+**Tabulate SES by ED and parishes
+tab ses_cat ED
+tab ses_cat parish
+>>>>>>> 57459abd692ca6287b1e7404d6a38dec35e71f42

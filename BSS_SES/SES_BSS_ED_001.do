@@ -7,7 +7,7 @@ cls
 **  Project:      	Macroscale Walkability- PhD
 **  Analyst:		Kern Rocke
 **	Date Created:	17/10/2019
-**	Date Modified: 	24/10/2019
+**	Date Modified: 	29/10/2019
 **  Algorithm Task: Data Preparation and Cleaning of BSS SES data by EDs 2010
 
 
@@ -1415,6 +1415,201 @@ label var t_occupation_refuse_work "Total Refuse Workers and other Elementary Wo
 label var t_occupation_not_stated "Total Occupation Not Stated"
 
 save "`datapath'/version01/1-input/BSS_SES/total_occupation_SES", replace
+
+restore
+********************************************************************************
+********************************************************************************
+
+*Load in excel data (GIS Attributes)
+import excel "`datapath'/version01/1-input/BSS_SES/SES_GIS_BSS_data.xlsx", allstring clear
+
+/////	GIS data	//////
+
+preserve
+
+*Data cleaning tasks
+drop in 1/2
+drop D E K-Q AJ AM-GC GX-HM HU-IA IC-IF IW IX IZ-JB JG-JQ
+destring, replace
+
+*Renaming and labelling variabels
+rename A ED
+rename B parish
+rename C total_pop
+*Marital Status
+rename F marital_married
+rename G marital_separated
+rename H marital_divorced
+rename I martial_widowed
+rename J martial_n_married
+*Religion
+rename R religion_adventist
+rename S religion_anglican
+rename T religion_bahal 
+rename U religion_baptist
+rename V relgion_bretheren
+rename W religion_church_lord
+rename X religion_hindu
+rename Y religion_jewish
+rename Z religion_jevovah_wit
+rename AA religion_methodist
+rename AB religion_moravian
+rename AC religion_mormon
+rename AD religion_muslim
+rename AE religion_pentecostal
+rename AF religion_rasta
+rename AG religion_catholic
+rename AH religion_salvation
+rename AI religion_other_chris
+rename AK religion_none
+rename AL religion_no
+*Number of rooms
+rename GD rooms_1
+rename GE rooms_2
+rename GF rooms_3
+rename GG rooms_4
+rename GH rooms_5
+rename GI rooms_6
+rename GJ rooms_7
+rename GK rooms_8
+rename GL rooms_9_more
+*Number of bedrooms
+rename GM bedrooms_0
+rename GN bedrooms_1
+rename GO bedrooms_2
+rename GP bedrooms_3
+rename GQ bedrooms_4
+rename GR bedrooms_5_more
+*Number of bathrooms
+rename GS bathroom_0
+rename GT bathroom_1
+rename GU bathroom_2
+rename GV bathroom_3
+rename GW bathroom_shared
+*Sewage
+rename HN sewage_wc_sewer
+rename HO sewage_wc_no_sewer
+rename HP sewage_other_toilet
+rename HQ sewage_pit
+rename HR sewage_no_toilet
+rename HS sewage_shared_toilet
+*Electrcity
+rename HT electicity
+*Number of vehciles 
+rename IG vehicles_0
+rename IH vehicles_1
+rename II vehicles_2
+rename IJ vehicles_3
+rename IK vehicles_4_more
+*Emigrants
+rename IL emigrants
+*Household ammentites
+rename IM amentites_stove
+rename IN amentites_fridge
+rename IO amentities_freezer
+rename IP amentities_water_tank
+rename IQ amentites_microwave
+rename IR amentities_toaster
+rename IS amentities_wash
+rename IT amentities_dish_wash
+rename IU amentities_dryer
+rename IV amentities_fixed_line
+rename IY amentities_tv
+rename JC amentities_radio
+rename JD amentities_cabel_tv
+rename JE amentities_stero_system
+rename JF amentities_computer
+ 
+*General variables (ED, parish, total population)
+label var ED "Enumeration District Number"
+label var parish "Parish"
+label var total_pop "Total Population within ED"
+*Marital Status
+label var marital_married "Married population"
+label var marital_separated "Separated population"
+label var marital_divorced "Divorced population"
+label var martial_widowed "Widowed population"
+label var martial_n_married "Never Married population"
+*Religion
+label var religion_adventist "Adventist population"
+label var religion_anglican "Anglican population"
+label var religion_bahal "Bahal (religion) population"
+label var religion_baptist "Baptist population"
+label var relgion_bretheren "Bretheren population"
+label var religion_church_lord "Church of the lord (religion) population"
+label var religion_hindu "Hindu population"
+label var religion_jewish "Jewish population"
+label var religion_jevovah_wit "Jevovah Witness population"
+label var religion_methodist "Methodist population"
+label var religion_moravian "Moravian population"
+label var religion_mormon "Mormon population"
+label var religion_muslim "Muslim population"
+label var religion_pentecostal "Pentecostal population"
+label var religion_rasta "Rastaferian population"
+label var religion_catholic "Roman Catholic population"
+label var religion_salvation "Salvation population"
+label var religion_other_chris "Other Christians population"
+label var religion_none "Religion none"
+label var religion_no "No religion"
+*Number of rooms
+label var rooms_1 "Household 1 room"
+label var rooms_2 "Household 2 rooms"
+label var rooms_3 "Household 3 rooms"
+label var rooms_4 "Household 4 rooms"
+label var rooms_5 "Household 5 rooms"
+label var rooms_6 "Household 6 rooms"
+label var rooms_7 "Household 7 rooms"
+label var rooms_8 "Household 8 rooms"
+label var rooms_9_more "Household 9 rooms and more"
+*Number of bedrooms
+label var bedrooms_0 "Household 0 bedrooms"
+label var bedrooms_1 "Household 1 bedroom"
+label var bedrooms_2 "Household 2 bedrooms" 
+label var bedrooms_3 "Household 3 bedrooms"
+label var bedrooms_4 "Household 4 bedrooms"
+label var bedrooms_5_more "Household 5 bedrooms and more"
+*Number of bathrooms
+label var bathroom_0 "Household 0 bathrooms"
+label var bathroom_1 "Household 1 bathroom"
+label var bathroom_2 "Household 2 bathrooms"
+label var bathroom_3 "Household 3 bathrooms"
+label var bathroom_shared "Household shared bathrooms"
+*Sewage
+label var sewage_wc_sewer "Sewage system available"
+label var sewage_wc_no_sewer "No sewage system"
+label var sewage_other_toilet "Other Toilet"
+label var sewage_pit "Sewage Pit"
+label var sewage_no_toilet "Sewage no toilet"
+label var sewage_shared_toilet "Sewage share toilet"
+*Electrcity
+label var electicity
+*Number of vehciles 
+label var vehicles_0 "Number of vehicles 0"
+label var vehicles_1 "Number of vehicles 1"
+label var vehicles_2 "Number of vehicles 2"
+label var vehicles_3 "Number of vehicles 3"
+label var vehicles_4_more "Number of vehicles 4 and more"
+*Emigrants
+label var emigrants
+*Household ammentites
+label var amentites_stove "Amentities: Stove"
+label var amentites_fridge "Amentities: Refridgerator"
+label var amentities_freezer "Amentities: Frezer"
+label var amentities_water_tank "Amentities: Water Tank"
+label var amentites_microwave "Amentities: Microwave"
+label var amentities_toaster "Amentities: Toaster"
+label var amentities_wash "Amentities: Washing machine"
+label var amentities_dish_wash "Amentities: Dish washer"
+label var amentities_dryer "Amentities: Electric dryer"
+label var amentities_fixed_line "Amentities: Fixed line dryer"
+label var amentities_tv "Amentities: Television"
+label var amentities_radio "Amentities: Radio"
+label var amentities_cabel_tv "Amentities: Cabel TV"
+label var amentities_stero_system "Amentities: Stero System"
+label var amentities_computer "Amentities: Computer"
+
+
+save "`datapath'/version01/1-input/BSS_SES/additional_SES", replace
 
 restore
 ********************************************************************************
