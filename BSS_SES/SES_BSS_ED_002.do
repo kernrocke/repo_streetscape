@@ -98,7 +98,7 @@ merge 1:1 ED using "`datapath'/version01/2-working/BSS_SES/`x'_SES", nogenerate
 
 *Merge non-gender specific datasets
 foreach x in household_size house_tenure single_mother_liveborn ///
-			relationship_to_head household_size liveborn crime {
+			relationship_to_head household_size liveborn crime additional {
 merge 1:1 ED using "`datapath'/version01/1-input/BSS_SES/`x'_SES.dta", nogenerate
                     }	
 
