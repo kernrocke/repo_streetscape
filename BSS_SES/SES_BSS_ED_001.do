@@ -7,7 +7,7 @@ cls
 **  Project:      	Macroscale Walkability- PhD
 **  Analyst:		Kern Rocke
 **	Date Created:	17/10/2019
-**	Date Modified: 	29/10/2019
+**	Date Modified: 	30/10/2019
 **  Algorithm Task: Data Preparation and Cleaning of BSS SES data by EDs 2010
 
 
@@ -16,7 +16,7 @@ version 13
 clear all
 macro drop _all
 set more 1
-set linesize 80
+set linesize 200
 
 *Setting working directory
 ** Dataset to encrypted location
@@ -1428,7 +1428,7 @@ import excel "`datapath'/version01/1-input/BSS_SES/SES_GIS_BSS_data.xlsx", allst
 preserve
 
 *Data cleaning tasks
-drop in 1/2
+drop in 1
 drop D E K-Q AJ AM-GC GX-HM HU-IF IW IX IZ-JB JG-JQ
 destring, replace
 
