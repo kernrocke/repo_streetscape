@@ -1429,7 +1429,7 @@ preserve
 
 *Data cleaning tasks
 drop in 1/2
-drop D E K-Q AJ AM-GC GX-HM HU-IA IC-IF IW IX IZ-JB JG-JQ
+drop D E K-Q AJ AM-GC GX-HM HU-IF IW IX IZ-JB JG-JQ
 destring, replace
 
 *Renaming and labelling variabels
@@ -1494,7 +1494,7 @@ rename HQ sewage_pit
 rename HR sewage_no_toilet
 rename HS sewage_shared_toilet
 *Electrcity
-rename HT electicity
+rename HT electricity
 *Number of vehciles 
 rename IG vehicles_0
 rename IH vehicles_1
@@ -1582,7 +1582,7 @@ label var sewage_pit "Sewage Pit"
 label var sewage_no_toilet "Sewage no toilet"
 label var sewage_shared_toilet "Sewage share toilet"
 *Electrcity
-label var electicity
+label var electricity "Electricity"
 *Number of vehciles 
 label var vehicles_0 "Number of vehicles 0"
 label var vehicles_1 "Number of vehicles 1"
@@ -1590,7 +1590,7 @@ label var vehicles_2 "Number of vehicles 2"
 label var vehicles_3 "Number of vehicles 3"
 label var vehicles_4_more "Number of vehicles 4 and more"
 *Emigrants
-label var emigrants
+label var emigrants "Emigrant population"
 *Household ammentites
 label var amentites_stove "Amentities: Stove"
 label var amentites_fridge "Amentities: Refridgerator"

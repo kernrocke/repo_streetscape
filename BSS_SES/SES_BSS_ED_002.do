@@ -104,6 +104,14 @@ merge 1:1 ED using "`datapath'/version01/1-input/BSS_SES/`x'_SES.dta", nogenerat
 
 drop in 584
 
+*Decode string parish variable
+encode parish, gen(parish1)
+drop parish
+rename parish1 parish
+
+*Re-order variables
+order parish total_pop, after(ED)
+
 label data "SES by Ennumeration Districts - Barbabdos Statistical Service"
 
 *Save dataset
