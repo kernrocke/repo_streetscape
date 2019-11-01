@@ -4,8 +4,8 @@ This repository contains the alogrithm code for the analysis SES by ED for Barba
 
 # Algorithm files 
 
-## SES_BSS_ED_000:    Statistical Analysis Plan
-## SES_BSS_ED_001:    Data Preparation and Cleaning
-## SES_BSS_ED_002:    Data Management and Merging
-## SES_BSS_ED_003:    PCA Analysis Preparation
-## SES_BSS_ED_004:    Correlations and PCA Analysis
+### SES_BSS_ED_000:    Statistical Analysis Plan
+### SES_BSS_ED_001:    Data Preparation and Cleaning
+### SES_BSS_ED_002:    Data Management and Merging
+### SES_BSS_ED_003:    PCA Analysis Preparation
+### SES_BSS_ED_004:    Correlations and PCA Analysis
