@@ -1509,11 +1509,11 @@ rename IK vehicles_4_more
 *Emigrants
 rename IL emigrants
 *Household ammentites
-rename IM amentites_stove
-rename IN amentites_fridge
+rename IM amentities_stove
+rename IN amentities_fridge
 rename IO amentities_freezer
 rename IP amentities_water_tank
-rename IQ amentites_microwave
+rename IQ amentities_microwave
 rename IR amentities_toaster
 rename IS amentities_wash
 rename IT amentities_dish_wash
@@ -1597,11 +1597,11 @@ label var vehicles_4_more "Number of vehicles 4 and more"
 *Emigrants
 label var emigrants "Emigrant population"
 *Household ammentites
-label var amentites_stove "Amentities: Stove"
-label var amentites_fridge "Amentities: Refridgerator"
+label var amentities_stove "Amentities: Stove"
+label var amentities_fridge "Amentities: Refridgerator"
 label var amentities_freezer "Amentities: Frezer"
 label var amentities_water_tank "Amentities: Water Tank"
-label var amentites_microwave "Amentities: Microwave"
+label var amentities_microwave "Amentities: Microwave"
 label var amentities_toaster "Amentities: Toaster"
 label var amentities_wash "Amentities: Washing machine"
 label var amentities_dish_wash "Amentities: Dish washer"
