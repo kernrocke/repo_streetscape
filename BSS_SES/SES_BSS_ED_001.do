@@ -1445,8 +1445,8 @@ rename C total_pop
 rename F marital_married
 rename G marital_separated
 rename H marital_divorced
-rename I martial_widowed
-rename J martial_n_married
+rename I marital_widowed
+rename J marital_n_married
 *Religion
 rename R religion_adventist
 rename S religion_anglican
