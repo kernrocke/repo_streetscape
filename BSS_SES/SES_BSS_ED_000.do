@@ -56,6 +56,14 @@ Measures for SES which will be considered are:
 11) Work activity
 12) Relationship to head of household
 13) House Tenureship
+14) Vehicle Ownership
+15) Household Ammentities
+16) Number of rooms
+17) Number of bedrooms
+18) Number of bathrooms
+19) Religion
+20) Toilet presence
+21) Marial status
 
 An idea for future work could be examining the Socioeconmic environment spatially across ECHORN sites.
 (Note: Data can be obtained for USVI and Puerto Rico by ED level from US.gov repositories?)
