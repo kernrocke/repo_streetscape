@@ -117,6 +117,7 @@ rename parish1 parish
 *Re-order variables
 order parish total_pop, after(ED)
 
+*Label data
 label data "SES by Ennumeration Districts - Barbabdos Statistical Service"
 
 *Save dataset

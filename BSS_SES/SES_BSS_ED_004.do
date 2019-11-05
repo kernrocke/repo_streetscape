@@ -47,7 +47,7 @@ global xlist t_income_median t_age_median per_education_less_secondary ///
 				per_rooms_less_3 per_bedrooms_less_2 per_bathroom_0 ///
 				per_prof_occupation per_amentities_stove per_amentities_fridge ///
 				per_amentities_microwave per_amentities_tv per_amentities_radio ///
-				per_amentities_wash per_twactivity_no_work ///
+				per_amentities_wash per_t_wactivity_no_work ///
 				per_t_wactivity_government per_t_wactivity_private_enter 	
 global ED
 
@@ -104,9 +104,6 @@ gen ind = _n
     #delimit cr
 restore
 
-<<<<<<< HEAD
-*
-=======
 *Inital PCA analysis
 paran $xlist
 
@@ -130,7 +127,7 @@ estat kmo
 sum ses_score
 
 **Categorize SES index scores into deciles
-xtile ses_dec, nq(10)
+xtile ses_dec = ses, nq(10)
 
 **Categorize deciles into high and low SES
 gen ses_cat = ses_dec
@@ -140,5 +137,10 @@ label define ses_cat 3"High" 1"Low" 2"Medium"
 label value ses_cat ses_cat
 
 **Tabulate SES by ED and parishes
-tab ses_cat ED
 tab ses_cat parish
+
+*Label Data
+label data "SES Indicators by Ennumeration Districts - Barbabdos Statistical Service (p3)"
+
+*Save dataset
+save "`datapath'/version01/2-working/BSS_SES/BSS_SES_003", replace

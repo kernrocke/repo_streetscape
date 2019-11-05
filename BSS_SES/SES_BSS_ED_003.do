@@ -258,7 +258,7 @@ label var per_rooms_`x' "Percentage Number of Rooms `x'"
 *********************************************************************
 *Convert Number of bedrooms variables to percentages
 
-foreach x in 1 2 3 4 5_more {
+foreach x in 0 1 2 3 4 5_more {
 
 gen per_bedrooms_`x' = (bedrooms_`x' / total_pop)*100
 label var per_bedrooms_`x' "Percentage Number of Bedrooms `x'"
@@ -267,7 +267,7 @@ label var per_bedrooms_`x' "Percentage Number of Bedrooms `x'"
 *********************************************************************
 *Convert Number of bathrooms variables to percentages
 
-foreach x in 1 2 3 shared {
+foreach x in 0 1 2 3 shared {
 
 gen per_bathroom_`x' = (bathroom_`x' / total_pop)*100
 label var per_bathroom_`x' "Percentage Number of Bathrooms `x'"
@@ -379,7 +379,7 @@ label var per_prof_occupation "Percentage Professional Occupation"
 
 **********************************************************************
 
-label data "SES Indicators by Ennumeration Districts - Barbabdos Statistical Service (p3)"
+label data "SES Indicators by Ennumeration Districts - Barbabdos Statistical Service (p2)"
 
 *Save dataset
 save "`datapath'/version01/2-working/BSS_SES/BSS_SES_002", replace
