@@ -305,7 +305,7 @@ label var per_`x' "Percentage Persons with `x'"
 *Convert Amentities variables to percentages
 
 foreach x in stove fridge freezer water_tank microwave toaster wash ///
-			dish_wash dryer fixed_line tv radio cabel_tv stero_system 
+			dish_wash dryer fixed_line tv radio cabel_tv stero_system ///
 			computer {
 
 gen per_amentites_`x' = (amentites_`x' / total_pop)
