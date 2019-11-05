@@ -17,7 +17,7 @@ cls
 version 13
 clear all
 macro drop _all
-set more 2
+set more 1
 set linesize 80
 
 *Setting working directory

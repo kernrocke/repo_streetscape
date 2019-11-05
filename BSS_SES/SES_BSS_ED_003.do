@@ -224,7 +224,7 @@ gen per_t_occupation_`x' = (t_occupation_`x' / total_pop)*100
 label var per_m_occupation_`x' "Male Percentage `x' Occupation"
 label var per_f_occupation_`x' "Female Percentage `x' Occupation"
 label var per_t_occupation_`x' "Total Percentage `x' Occupation"
-             }
+             } 
                                                  
 *********************************************************************
 *Convert Martial Status variables to percentages
@@ -379,7 +379,7 @@ label var per_prof_occupation "Percentage Professional Occupation"
 
 **********************************************************************
 
-label data "SES by Ennumeration Districts - Barbabdos Statistical Service (p3)"
+label data "SES Indicators by Ennumeration Districts - Barbabdos Statistical Service (p3)"
 
 *Save dataset
 save "`datapath'/version01/2-working/BSS_SES/BSS_SES_002", replace
