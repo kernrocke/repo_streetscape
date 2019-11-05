@@ -5,11 +5,11 @@ cls
 //Note: This algorithm can only be run after SES_BSS_ED_002
 
 **  GENERAL DO-FILE COMMENTS
-**  Program:		SES_BSS_ED_002.do
+**  Program:		SES_BSS_ED_003.do
 **  Project:      	Macroscale Walkability- PhD
 **  Analyst:		Kern Rocke
 **	Date Created:	24/10/2019
-**	Date Modified: 	30/10/2019
+**	Date Modified: 	05/11/2019
 **  Algorithm Task: Creating SES variables for PCA analysis
 
 
