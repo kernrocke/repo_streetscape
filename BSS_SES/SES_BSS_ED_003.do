@@ -308,8 +308,8 @@ foreach x in stove fridge freezer water_tank microwave toaster wash ///
 			dish_wash dryer fixed_line tv radio cabel_tv stero_system ///
 			computer {
 
-gen per_amentites_`x' = (amentites_`x' / total_pop)
-label var per_amentites_`x' "Percentage Persons Amentities (`x')"
+gen per_amentities_`x' = (amentites_`x' / total_pop)
+label var per_amentities_`x' "Percentage Persons Amentities (`x')"
 }
                                                  
 *********************************************************************
