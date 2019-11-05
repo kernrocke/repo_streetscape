@@ -231,7 +231,7 @@ label var per_t_occupation_`x' "Total Percentage `x' Occupation"
 
 foreach x in married separated divorced widowed n_married {
 
-gen per_marital_`x' = (marital_`x' / total_pop)
+gen per_marital_`x' = (marital_`x' / total_pop)*100
 label var per_marital_`x' "Percentage Marital `x'"
 }
 
@@ -242,7 +242,7 @@ foreach x in adventist anglican bahal baptist bretheren church_lord ///
 			hindu jewish jevovah_wit methodist moravian mormon muslim ///
 			pentecostal rasta catholic salvation other_chris none no{
 
-gen per_religion_`x' = (religion_`x' / total_pop)
+gen per_religion_`x' = (religion_`x' / total_pop)*100
 label var per_religion_`x' "Percentage Religion `x'"
 }
                                                  
@@ -251,7 +251,7 @@ label var per_religion_`x' "Percentage Religion `x'"
 
 foreach x in 1 2 3 4 5 6 7 8 9_more {
 
-gen per_rooms_`x' = (rooms_`x' / total_pop)
+gen per_rooms_`x' = (rooms_`x' / total_pop)*100
 label var per_rooms_`x' "Percentage Number of Rooms `x'"
 }
                                                  
@@ -260,7 +260,7 @@ label var per_rooms_`x' "Percentage Number of Rooms `x'"
 
 foreach x in 1 2 3 4 5_more {
 
-gen per_bedrooms_`x' = (bedrooms_`x' / total_pop)
+gen per_bedrooms_`x' = (bedrooms_`x' / total_pop)*100
 label var per_bedrooms_`x' "Percentage Number of Bedrooms `x'"
 }
                                                  
@@ -269,7 +269,7 @@ label var per_bedrooms_`x' "Percentage Number of Bedrooms `x'"
 
 foreach x in 1 2 3 shared {
 
-gen per_bathroom_`x' = (bathroom_`x' / total_pop)
+gen per_bathroom_`x' = (bathroom_`x' / total_pop)*100
 label var per_bathroom_`x' "Percentage Number of Bathrooms `x'"
 }
 
@@ -279,16 +279,16 @@ label var per_bathroom_`x' "Percentage Number of Bathrooms `x'"
 foreach x in wc_sewer wc_no_sewer other_toilet pit no_toilet ///
 			shared_toilet {
 
-gen per_sewage_`x' = (sewage_`x' / total_pop)
+gen per_sewage_`x' = (sewage_`x' / total_pop)*100
 label var per_sewage_`x' "Percentage Sewage `x'"
 }
 
 *********************************************************************
 *Convert Number of vehicles variables to percentages
 
-foreach x in 1 2 3 4_more {
+foreach x in 0 1 2 3 4_more {
 
-gen per_vehicles_`x' = (vehicles_`x' / total_pop)
+gen per_vehicles_`x' = (vehicles_`x' / total_pop)*100
 label var per_vehicles_`x' "Percentage Number of Vehicles `x'"
 }
                                                  
@@ -297,7 +297,7 @@ label var per_vehicles_`x' "Percentage Number of Vehicles `x'"
 
 foreach x in electricity emigrants {
 
-gen per_`x' = (`x' / total_pop)
+gen per_`x' = (`x' / total_pop)*100
 label var per_`x' "Percentage Persons with `x'"
 }
                                                  
@@ -308,12 +308,78 @@ foreach x in stove fridge freezer water_tank microwave toaster wash ///
 			dish_wash dryer fixed_line tv radio cabel_tv stero_system ///
 			computer {
 
-gen per_amentities_`x' = (amentities_`x' / total_pop)
+gen per_amentities_`x' = (amentities_`x' / total_pop)*100
 label var per_amentities_`x' "Percentage Persons Amentities (`x')"
 }
                                                  
 *********************************************************************
 
+/*Creating variable and percentages for residents with education less than 
+secondary education
+*/
+
+egen education_less_secondary = rowtotal(t_education_preprimary ///
+								t_education_primary t_education_composite)
+label var education_less_secondary "Less than Secondary Education"
+
+gen per_education_less_secondary = (education_less_secondary / total_pop) *100
+label var per_education_less_secondary "Percentage Less than Secondary Education"
+
+*********************************************************************
+
+/*Creating variable and percentages for vehicle ownership
+*/
+
+egen vehicle_presence = rowtotal(vehicles_1 vehicles_2 vehicles_3 ///
+						vehicles_4_more)
+label var vehicle_presence "Vehicular Ownership"
+
+gen per_vehicle_presence = (vehicle_presence/total_pop)*100
+label var per_vehicle_presence "Percentage Vehiclular Ownership"
+
+*********************************************************************
+
+/*Creating variable and percentages for less than 3 rooms at home
+*/
+
+egen rooms_less_3 = rowtotal(rooms_1 rooms_2)
+label var rooms_less_3 "Less than 3 rooms"
+
+gen per_rooms_less_3 = (rooms_less_3/total_pop)*100
+label var per_rooms_less_3 "Percentage Less than 3 rooms"
+
+*********************************************************************
+
+/*Creating variable and percentages for less than 3 rooms at home
+*/
+
+egen bedrooms_less_2 = rowtotal(bedrooms_0 bedrooms_1)
+label var bedrooms_less_2 "Less than 2 berooms"
+
+gen per_bedrooms_less_2 = (bedrooms_less_2/total_pop)*100
+label var per_bedrooms_less_2 "Percentage Less than 2 bedrooms"
+
+*********************************************************************
+
+/*Creating variable and percentages for professional occupations
+*/
+
+egen prof_occupation = rowtotal(t_occupation_exec t_occupation_exec ///
+						t_occupation_admin_mange t_occupation_prod_mange ///
+						t_occupation_hosp_mange t_occupation_sci_prof ///
+						t_occupation_health_prof t_occupation_teach_prof ///
+						t_occupation_busi_prof t_occupation_info_prof ///
+						t_occupation_legal_prof t_occupation_sci_a_prof ///
+						t_occupation_health_a_prof t_occupation_busi_a_prof ///
+						t_occupation_legal_a_prof)
+label var prof_occupation "Professional Occupation"
+
+gen per_prof_occupation = (prof_occupation/total_pop)*100
+label var per_prof_occupation "Percentage Professional Occupation"
+
+**********************************************************************
+
+label data "SES by Ennumeration Districts - Barbabdos Statistical Service (p3)"
 
 *Save dataset
 save "`datapath'/version01/2-working/BSS_SES/BSS_SES_002", replace

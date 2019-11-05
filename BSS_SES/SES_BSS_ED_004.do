@@ -40,9 +40,15 @@ local logpath X:/OneDrive - The University of the West Indies/repo_datagroup/rep
 use "`datapath'/version01/2-working/BSS_SES/BSS_SES_002", clear
 
 **Initalize macros
-global xlist per_m_race_black - per_ammentities_computer ////
-			hsize_mean f_income_median f_age_median m_income_median ///
-			m_age_median t_age_median t_income_median	
+global xlist t_income_median t_age_median per_education_less_secondary ///
+				per_crime_victim hsize_mean per_htenure_owned ///
+				per_htenure_private per_htenure_gov_rent per_electricity ///
+				per_vehicle_presence per_smother_total per_marital_n_married ///
+				per_rooms_less_3 per_bedrooms_less_2 per_bathroom_0 ///
+				per_prof_occupation per_amentities_stove per_amentities_fridge ///
+				per_amentities_microwave per_amentities_tv per_amentities_radio ///
+				per_amentities_wash per_twactivity_no_work ///
+				per_t_wactivity_government per_t_wactivity_private_enter 	
 global ED
 
 ** Describe SES categories
