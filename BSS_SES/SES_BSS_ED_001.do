@@ -1452,7 +1452,7 @@ rename R religion_adventist
 rename S religion_anglican
 rename T religion_bahal 
 rename U religion_baptist
-rename V relgion_bretheren
+rename V religion_bretheren
 rename W religion_church_lord
 rename X religion_hindu
 rename Y religion_jewish
@@ -1540,7 +1540,7 @@ label var religion_adventist "Adventist population"
 label var religion_anglican "Anglican population"
 label var religion_bahal "Bahal (religion) population"
 label var religion_baptist "Baptist population"
-label var relgion_bretheren "Bretheren population"
+label var religion_bretheren "Bretheren population"
 label var religion_church_lord "Church of the lord (religion) population"
 label var religion_hindu "Hindu population"
 label var religion_jewish "Jewish population"
