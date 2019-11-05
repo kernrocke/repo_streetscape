@@ -277,7 +277,7 @@ label var per_bathroom_`x' "Percentage Number of Bathrooms `x'"
 *Convert Sewage variables to percentages
 
 foreach x in wc_sewer wc_no_sewer other_toilet pit no_toilet ///
-			shared_toilet electricity {
+			shared_toilet {
 
 gen per_sewage_`x' = (sewage_`x' / total_pop)
 label var per_sewage_`x' "Percentage Sewage `x'"
