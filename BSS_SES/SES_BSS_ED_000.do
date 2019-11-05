@@ -97,4 +97,34 @@ This will be a scatter plot
 Consider in addition analysis using "Lasso (availabile in STATA v16)"
 This can be used to compare to the results obtained from PCA analysis
 
+
+BARADOS SES INDEX MODEL
+
+Proposed Variable Model for SES/SEP index
+
+1)	Total Median income
+2)	Education less than secondary
+3)	Crime murder
+4)	Crime shooting
+5)	Crime robbery
+6)	Crime victim
+7)	Median age (Total)
+8)	Household size mean
+9)	House tenure owner
+10)	House tenure private rent
+11)	House tenure government rent
+12)	Professional Occupations
+13)	Number of rooms
+14)	Number of bedrooms
+15)	Number of bathrooms
+16)	Vehicle owner
+17)	Electricity
+18)	Single/never married
+19)	Home Amenities (stove, refrigerator, microwave, television, radio, washing machine)
+20)	Single mothers 
+21)	Main activity working
+22)	Main activity no working
+23)	Work activity not working
+
+
 */

@@ -2,7 +2,7 @@ clear
 capture log close
 cls
 
-//Note: This algorithm can only be run after SES_BSS_ED_002
+//Note: This algorithm can only be run after SES_BSS_ED_003
 
 **  GENERAL DO-FILE COMMENTS
 **  Program:		SES_BSS_ED_002.do
@@ -22,6 +22,11 @@ set linesize 80
 
 *Setting working directory
 ** Dataset to encrypted location
+/*
+WINDOWS OS
+local datapath "X:/The University of the West Indies/DataGroup - repo_data/data_p145"
+*/
+*MAC OS
 local datapath "/Volumes/Secomba/kernrocke/Boxcryptor/DataGroup - repo_data/data_p145"
 ** Logfiles to unencrypted location
 local logpath X:/OneDrive - The University of the West Indies/repo_datagroup/repo_p145
