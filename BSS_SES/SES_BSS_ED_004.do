@@ -87,10 +87,10 @@ gen ind = _n
 			graphregion(color(gs16)) 
             ysize(5) xsize(10)
 
-			xlab(0(25)300 , labs(3) tlc(gs0) labc(gs0) nogrid glc(gs16))
+			xlab(0(25)350 , labs(3) tlc(gs0) labc(gs0) nogrid glc(gs16))
 			xscale(fill lc(gs0))
 			xtitle("Correlations", size(3) color(gs0) margin(l=2 r=2 t=5 b=2))
-			xmtick(0(25)325, tlc(gs0))
+			xmtick(0(25)375, tlc(gs0))
 
 			ylab(-1.0(0.1)1.0
 			,
