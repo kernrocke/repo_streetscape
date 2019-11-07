@@ -54,7 +54,8 @@ global xlist t_income_median t_age_median per_education_less_secondary ///
 				per_prof_occupation per_amentities_stove per_amentities_fridge ///
 				per_amentities_microwave per_amentities_tv per_amentities_radio ///
 				per_amentities_wash per_t_wactivity_no_work per_age_depend ///
-				per_t_wactivity_government per_t_wactivity_private_enter 	
+				per_t_wactivity_government per_t_wactivity_private_enter ///
+				per_high_income	
 global ED
 
 ** Describe SES categories

@@ -381,11 +381,22 @@ label var per_prof_occupation "Percentage Professional Occupation"
 /*Creating variable and percentages for age dependancy (<15 years & >65 years)
 */
 
-egen age_depend = rowtotal(bedrooms_0 bedrooms_1)
+egen age_depend = rowtotal(t_age_0_9 t_age_10_19 t_age_60_69 t_age_70_79    ///
+                            t_age_80_89 t_age_90_99 t_age_100_over)
 label var age_depend "Age Dependancy (<15 years & >65 years)"
 
 gen per_age_depend = (age_depend/total_pop)*100
 label var per_age_depend "Percentage Age Dependancy (<15 years & >65 years)"
+
+*********************************************************************
+/*Creating variable and percentages for high income (>$150000)
+*/
+
+egen high_income = rowtotal(t_income_150_199 t_income_200_over)
+label var high_income "High income >$150000"
+
+gen per_high_income = (high_income/total_pop)*100
+label var per_high_income "Percentage High income >$150000"
 
 *********************************************************************
 
