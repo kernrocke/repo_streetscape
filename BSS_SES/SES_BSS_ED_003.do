@@ -399,6 +399,39 @@ gen per_high_income = (high_income/total_pop)*100
 label var per_high_income "Percentage High income >$150000"
 
 *********************************************************************
+*Calculate population density by ED
+
+/*
+Christ Church   =   1
+St. Andrew      =   2
+St. George      =   3
+St. James       =   4
+St. John        =   5
+St. Joseph      =   6
+St. Lucy        =   7
+St. Michael     =   8
+St. Peter       =   9
+St. Phillip     =   10
+St. Thomas      =   11
+*/
+
+gen pop_density = . 
+
+replace pop_density if parish ==   1 = (total_pop/43127)*100
+replace pop_density if parish ==   2 = (total_pop/4631)*100
+replace pop_density if parish ==   3 = (total_pop/18203)*100
+replace pop_density if parish ==   4 = (total_pop/21258)*100
+replace pop_density if parish ==   5 = (total_pop/8617)*100
+replace pop_density if parish ==   6 = (total_pop/5939)*100
+replace pop_density if parish ==   7 = (total_pop/8609)*100
+replace pop_density if parish ==   8 = (total_pop/69604)*100
+replace pop_density if parish ==   9 = (total_pop/10382)*100
+replace pop_density if parish ==   10 = (total_pop/23788)*100
+replace pop_density if parish ==   11 = (total_pop/12035)*100
+
+label var pop_density "Population Density"
+
+*********************************************************************
 
 label data "SES Indicators by Ennumeration Districts - Barbabdos Statistical Service (p2)"
 
