@@ -31,7 +31,13 @@ local datapath "/Volumes/Secomba/kernrocke/Boxcryptor/DataGroup - repo_data/data
 ** Logfiles to unencrypted location
 local logpath X:/OneDrive - The University of the West Indies/repo_datagroup/repo_p145
 
+/*
+Note check correlations between variables. Correlations giving r=0.99 should not be 
+considered
 
+Check median income values of 999999. This may be indicated as missing values.
+Consider using income proportions
+*/
 
 ** ------------------------------------------
 ** FILE 1- DATA PREPARATION
