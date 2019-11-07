@@ -9,7 +9,7 @@ cls
 **  Project:      	Macroscale Walkability- PhD
 **  Analyst:		Kern Rocke
 **	Date Created:	28/10/2019
-**	Date Modified: 	05/11/2019
+**	Date Modified: 	07/11/2019
 **  Algorithm Task: Correlations and Inital PCA Analysis
 
 
@@ -47,7 +47,7 @@ global xlist t_income_median t_age_median per_education_less_secondary ///
 				per_rooms_less_3 per_bedrooms_less_2 per_bathroom_0 ///
 				per_prof_occupation per_amentities_stove per_amentities_fridge ///
 				per_amentities_microwave per_amentities_tv per_amentities_radio ///
-				per_amentities_wash per_t_wactivity_no_work ///
+				per_amentities_wash per_t_wactivity_no_work per_age_depend ///
 				per_t_wactivity_government per_t_wactivity_private_enter 	
 global ED
 
@@ -67,6 +67,7 @@ end
 svmat CORR
 keep CORR 
 drop if CORR == 1 
+drop if CORR == .
 gen ind = _n
 
     ** Plot the correlations --> INDEX PLOT
@@ -74,15 +75,15 @@ gen ind = _n
     #delimit ;
 	gr twoway
 		/// Correlation
-		(sc CORR ind , msize(3.5) m(o) mlc(gs0) mfc("161 217 155 %75") mlw(0.1))
+		(sc CORR ind , msize(3.5) m(o) mlc(gs0) mfc("41 89 255") mlw(0.1))
 		,
 			graphregion(color(gs16)) 
             ysize(5) xsize(10)
 
-			xlab(0(50)450 , labs(3) tlc(gs0) labc(gs0) nogrid glc(gs16))
+			xlab(0(25)300 , labs(3) tlc(gs0) labc(gs0) nogrid glc(gs16))
 			xscale(fill lc(gs0))
 			xtitle("Correlations", size(3) color(gs0) margin(l=2 r=2 t=5 b=2))
-			xmtick(0(50)500, tlc(gs0))
+			xmtick(0(25)325, tlc(gs0))
 
 			ylab(-1.0(0.1)1.0
 			,

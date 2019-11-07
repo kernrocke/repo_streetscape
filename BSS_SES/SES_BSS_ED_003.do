@@ -378,6 +378,16 @@ gen per_prof_occupation = (prof_occupation/total_pop)*100
 label var per_prof_occupation "Percentage Professional Occupation"
 
 **********************************************************************
+/*Creating variable and percentages for age dependancy (<15 years & >65 years)
+*/
+
+egen age_depend = rowtotal(bedrooms_0 bedrooms_1)
+label var age_depend "Age Dependancy (<15 years & >65 years)"
+
+gen per_age_depend = (age_depend/total_pop)*100
+label var per_age_depend "Percentage Age Dependancy (<15 years & >65 years)"
+
+*********************************************************************
 
 label data "SES Indicators by Ennumeration Districts - Barbabdos Statistical Service (p2)"
 
