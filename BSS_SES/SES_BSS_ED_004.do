@@ -115,7 +115,7 @@ gen ind = _n
 restore
 
 *Inital PCA analysis
-paran $xlist, graph color ite(3924)
+paran $xlist, graph color
 
 pca $xlist
 
