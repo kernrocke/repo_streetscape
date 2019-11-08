@@ -437,7 +437,7 @@ label var pop_density "Population Density"
 *********************************************************************
 * Create variable for Renting (Government and Private Renting)
 
-egen renting = rowtotal(per_htenure_private per_htenure_gov_rent)
+egen renting = rowtotal(htenure_private htenure_gov_rent)
 label var renting "Renting (Governemnt and Private)"
 
 gen per_renting = (renting/total_pop)*100
