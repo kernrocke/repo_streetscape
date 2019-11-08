@@ -55,7 +55,9 @@ global xlist per_t_income_0_49 t_age_median per_education_less_secondary ///
 				per_amentities_microwave per_amentities_tv per_amentities_radio ///
 				per_amentities_wash per_t_wactivity_no_work per_age_depend ///
 				per_t_wactivity_government per_t_wactivity_private_enter ///
-				per_high_income	
+				per_high_income	pop_density per_renting per_unemployment ///
+				per_private_wactivity per_live_5_more per_prof_n_techoccupation ///
+				per_prof_techoccupation
 global ED
 
 ** Describe SES categories
@@ -87,10 +89,10 @@ gen ind = _n
 			graphregion(color(gs16)) 
             ysize(5) xsize(10)
 
-			xlab(0(25)350 , labs(3) tlc(gs0) labc(gs0) nogrid glc(gs16))
+			xlab(0(25)450 , labs(3) tlc(gs0) labc(gs0) nogrid glc(gs16))
 			xscale(fill lc(gs0))
 			xtitle("Correlations", size(3) color(gs0) margin(l=2 r=2 t=5 b=2))
-			xmtick(0(25)375, tlc(gs0))
+			xmtick(0(25)475, tlc(gs0))
 
 			ylab(-1.0(0.1)1.0
 			,
