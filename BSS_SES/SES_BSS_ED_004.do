@@ -46,7 +46,7 @@ Consider using income proportions
 use "`datapath'/version01/2-working/BSS_SES/BSS_SES_002", clear
 
 **Initalize macros
-global xlist t_income_median t_age_median per_education_less_secondary ///
+global xlist per_t_income_0_49 t_age_median per_education_less_secondary ///
 				per_crime_victim hsize_mean per_htenure_owned ///
 				per_htenure_private per_htenure_gov_rent per_electricity ///
 				per_vehicle_presence per_smother_total per_marital_n_married ///

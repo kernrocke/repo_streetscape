@@ -402,17 +402,20 @@ label var per_high_income "Percentage High income >$150000"
 *Calculate population density by ED
 
 /*
-Christ Church   =   1
-St. Andrew      =   2
-St. George      =   3
-St. James       =   4
-St. John        =   5
-St. Joseph      =   6
-St. Lucy        =   7
-St. Michael     =   8
-St. Peter       =   9
-St. Phillip     =   10
-St. Thomas      =   11
+
+Parish          =  Code =   Population Size
+
+Christ Church   =   1   =   43127
+St. Andrew      =   2   =   4631
+St. George      =   3   =   18203
+St. James       =   4   =   21258
+St. John        =   5   =   8617
+St. Joseph      =   6   =   5939
+St. Lucy        =   7   =   8609
+St. Michael     =   8   =   69604
+St. Peter       =   9   =   10382
+St. Phillip     =   10  =   23788
+St. Thomas      =   11  =   12035
 */
 
 gen pop_density = . 
@@ -432,6 +435,74 @@ replace pop_density if parish ==   11 = (total_pop/12035)*100
 label var pop_density "Population Density"
 
 *********************************************************************
+* Create variable for Renting (Government and Private Renting)
+
+egen renting = rowtotal(per_htenure_private per_htenure_gov_rent)
+label var renting "Renting (Governemnt and Private)"
+
+gen per_renting = (renting/total_pop)*100
+label var per_renting "Percentage Renting (Government and Private)"
+
+*********************************************************************
+* Create variable for Main Activity No Job (Unemployed)
+
+egen unemployment = rowtotal(t_mactivity_retired t_mactivity_student ///
+                    t_mactivity_home t_mactivity_look_work)
+label var unemployment "Unemployment"
+
+gen per_unemployment = (unemployment/total_pop)*100
+label var per_unemployment "Percentage Unemployment"
+
+*********************************************************************
+*Create variable for Private Working Activity (Private Enterprise/ Household)
+
+egen private_wactivity = rowtotal(t_wactivity_private_enter t_wactivity_private_house)
+label var private_wactivity "Private Work Activity"
+
+gen per_private_wactivity = (private_wactivity/total_pop)*100
+label var per_private_wactivity "Percentage Private Work Activity"
+
+*********************************************************************
+*Create variable for women 15-64 years with >5 liveborn children
+
+egen live_5_more = rowtotal(live_6 live_7 live_7 live_8 live-9 ///
+                        live_10)
+label var live_5_more "Women with >5 Liveborn children"
+
+gen per_live_5_more = (live_5_more/total_pop)*100
+label var per_live_5_more "Percentage Women with >5 Liveborn children"
+
+*********************************************************************
+/*Creating variable and percentages for Non-Technical/Professional occupations
+*/
+
+egen prof_n_techoccupation = rowtotal(t_occupation_gen_clerk t_occupation_cust_clerk ///
+                                t_occupation_num_clerk t_occupation_other_clerk ///
+                                t_occupation_per_work t_occupation_sale_work ///
+                                t_occupation_care_work t_occupation_prot_work ///
+                                t_occupation_clean t_occupation_food_prep ///
+                                t_occupation_street_ser)
+label var prof_n_techoccupation "Non Technical/Professional Occupation"
+
+gen per_prof_n_techoccupation = (prof_n_techoccupation/total_pop)*100
+label var per_prof_n_techoccupation "Percentage Non Technical/Professional Occupation"
+
+**********************************************************************
+/*Creating variable and percentages for Technical occupations
+*/
+
+egen prof_techoccupation = rowtotal(t_occupation_info_tech t_occupation_mar_agri ///
+                            t_occupation_mar_fores t_occupation_s_farm ///
+                            t_occupation_build_work t_occupation_metal_work ///
+                            t_occupation_handicraft t_occupation_elec_work ///
+                            t_occupation_food_process t_occupation_plant_assemble ///
+                            t_occupation_drive_oper)
+label var prof_techoccupation "Technical Occupation"
+
+gen per_prof_techoccupation = (prof_techoccupation/total_pop)*100
+label var per_prof_techoccupation "Percentage Technical Occupation"
+
+**********************************************************************
 
 label data "SES Indicators by Ennumeration Districts - Barbabdos Statistical Service (p2)"
 
