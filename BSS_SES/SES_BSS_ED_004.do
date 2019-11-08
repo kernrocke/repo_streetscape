@@ -48,16 +48,15 @@ use "`datapath'/version01/2-working/BSS_SES/BSS_SES_002", clear
 **Initalize macros
 global xlist per_t_income_0_49 t_age_median per_education_less_secondary ///
 				per_crime_victim hsize_mean per_htenure_owned ///
-				per_htenure_private per_htenure_gov_rent per_electricity ///
+				pop_density per_renting per_high_income per_electricity ///
 				per_vehicle_presence per_smother_total per_marital_n_married ///
 				per_rooms_less_3 per_bedrooms_less_2 per_bathroom_0 ///
 				per_prof_occupation per_amentities_stove per_amentities_fridge ///
 				per_amentities_microwave per_amentities_tv per_amentities_radio ///
 				per_amentities_wash per_t_wactivity_no_work per_age_depend ///
 				per_t_wactivity_government per_t_wactivity_private_enter ///
-				per_high_income	pop_density per_renting per_unemployment ///
 				per_private_wactivity per_live_5_more per_prof_n_techoccupation ///
-				per_prof_techoccupation
+				per_prof_techoccupation per_unemployment
 global ED
 
 ** Describe SES categories
@@ -89,10 +88,10 @@ gen ind = _n
 			graphregion(color(gs16)) 
             ysize(5) xsize(10)
 
-			xlab(0(25)550 , labs(3) tlc(gs0) labc(gs0) nogrid glc(gs16))
+			xlab(0(25)500 , labs(3) tlc(gs0) labc(gs0) nogrid glc(gs16))
 			xscale(fill lc(gs0))
 			xtitle("Correlations", size(3) color(gs0) margin(l=2 r=2 t=5 b=2))
-			xmtick(0(25)550, tlc(gs0))
+			xmtick(0(25)500, tlc(gs0))
 
 			ylab(-1.0(0.1)1.0
 			,
@@ -135,6 +134,7 @@ estat kmo
 
 **Summary of ses index scores
 sum ses_score
+tabstat ses_score, by(parish) stat(mean q50)
 
 **Categorize SES index scores into deciles
 xtile ses_dec = ses, nq(10)
@@ -154,3 +154,6 @@ label data "SES Indicators by Ennumeration Districts - Barbabdos Statistical Ser
 
 *Save dataset
 save "`datapath'/version01/2-working/BSS_SES/BSS_SES_003", replace
+
+*Save data in Excel format for GIS import
+export excel "`datapath'/version01/2-working/BSS_SES/SES_data.xlsx", firstrow(variables) replace
