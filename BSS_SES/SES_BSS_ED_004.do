@@ -134,7 +134,7 @@ estat kmo
 
 **Summary of ses index scores
 sum ses_score
-tabstat ses_score, by(parish) stat(mean q50)
+tabstat ses_score, by(parish) stat(mean median)
 
 **Categorize SES index scores into deciles
 xtile ses_dec = ses, nq(10)
