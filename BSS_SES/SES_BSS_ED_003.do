@@ -465,7 +465,7 @@ label var per_private_wactivity "Percentage Private Work Activity"
 *********************************************************************
 *Create variable for women 15-64 years with >5 liveborn children
 
-egen live_5_more = rowtotal(live_6 live_7 live_7 live_8 live-9 ///
+egen live_5_more = rowtotal(live_6 live_7 live_7 live_8 live_9 ///
                         live_10)
 label var live_5_more "Women with >5 Liveborn children"
 
