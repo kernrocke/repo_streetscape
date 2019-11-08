@@ -9,7 +9,7 @@ cls
 **  Project:      	Macroscale Walkability- PhD
 **  Analyst:		Kern Rocke
 **	Date Created:	28/10/2019
-**	Date Modified: 	07/11/2019
+**	Date Modified: 	08/11/2019
 **  Algorithm Task: Correlations and Inital PCA Analysis
 
 
@@ -115,7 +115,7 @@ gen ind = _n
 restore
 
 *Inital PCA analysis
-paran $xlist
+paran $xlist, graph color ite(3924)
 
 pca $xlist
 
