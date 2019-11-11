@@ -9,7 +9,7 @@ cls
 **  Project:      	Macroscale Walkability- PhD
 **  Analyst:		Kern Rocke
 **	Date Created:	28/10/2019
-**	Date Modified: 	08/11/2019
+**	Date Modified: 	11/11/2019
 **  Algorithm Task: Correlations and Inital PCA Analysis
 
 
@@ -45,6 +45,25 @@ Consider using income proportions
 
 use "`datapath'/version01/2-working/BSS_SES/BSS_SES_002", clear
 
+*List of SES Variables 
+
+*1) Income: per_t_income_0_49 per_high_income
+*2) Education: per_education_less_secondary
+*3) Age: t_age_median per_age_depend
+*4) Home Amentities:  per_amentities_stove per_amentities_fridge per_amentities_microwave per_amentities_tv per_amentities_radio per_amentities_wash
+*5) Occupation: per_prof_occupation per_prof_techoccupation per_prof_n_techoccupation 
+*6) House Tenure: per_htenure_owned per_renting
+*7) Work Activity: per_t_wactivity_no_work per_t_wactivity_government per_t_wactivity_private_enter per_private_wactivity
+*8) Crime: per_crime_victim
+*9) Household Size: hsize_mean
+*10) Population Density: pop_density
+*11) Single Mother: per_smother_total
+*12) Marital Status: per_marital_n_married
+*13) Household Structure: per_rooms_less_3 per_bedrooms_less_2 per_bathroom_0
+*14) Vehicle Ownership: per_vehicle_presence
+
+
+
 **Initalize macros
 global xlist per_t_income_0_49 t_age_median per_education_less_secondary ///
 				per_crime_victim hsize_mean per_htenure_owned ///
@@ -59,10 +78,12 @@ global xlist per_t_income_0_49 t_age_median per_education_less_secondary ///
 				per_prof_techoccupation per_unemployment
 global ED
 
+
 ** Describe SES categories
 des $xlist
 sum $xlist
 corr $xlist
+tabstat $xlist, by(parish) stat(mean)
 
 **Correlations between SES categories
 preserve
