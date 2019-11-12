@@ -4,7 +4,7 @@
 # Project:	     Macroscale Walkability - PhD
 # Analyst:	     Kern Rocke
 # Date Created:	 11/11/2019
-# Date Modified: 11/11/2019
+# Date Modified: 12/11/2019
 # Algoithm Task: Creating File Geodatabase for SES Ennumeration Mapping
 
 #Import system modules
